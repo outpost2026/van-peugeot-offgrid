@@ -55,7 +55,7 @@ sensor:
 - Čte: V, I, P, SOC, TTG, cell voltages (LiFePO₄), alarmy
 - Lze kombinovat s BLE proxy pro rozšíření dosahu
 
-**Důležité:** Kuba má MultiPlus C (bez BLE) — ten nelze monitorovat BLE. Ale MPPT 100/50 a Orion XS mají BLE.
+**Důležité:** Klient má MultiPlus C (bez BLE) — ten nelze monitorovat BLE. Ale MPPT 100/50 a Orion XS mají BLE.
 
 ### 1.3 OpenDTU-OnBattery — Victron + Hoymiles v jednom
 
@@ -239,7 +239,7 @@ Všechna zařízení doporučuji postavit na **ESPHome** — jednotný framework
 ### 6.2 Alternativa: jeden ESP32 na vše
 
 Pro minimalistický setup stačí jeden ESP32:
-- UART1: VE.Direct → MPPT nebo SmartShunt (ale Kuba nyní nemá SmartShunt)
+- UART1: VE.Direct → MPPT nebo SmartShunt (ale klient nyní nemá SmartShunt)
 - UART2: PZEM-004T
 - GPIO: DS18B20 × ?, MQ-7, MQ-2, OLED
 

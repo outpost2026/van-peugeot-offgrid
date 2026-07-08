@@ -1,12 +1,12 @@
 # Příprava na schůzku s klientem — 9. 7. 2026
 
-**Klient:** Kuba Sládek  
-**Místo:** Chata Ondry (Draháň)  
+**Klient:** —anonymizováno—  
+**Místo:** Konzultace u konzultanta  
 **Účel:** Osobní konzultace — kontrola komponent, odsouhlasení zapojení, domluva podmínek
 
 ---
 
-## 1. Checklist — fyzická kontrola komponent (Kuba přiveze)
+## 1. Checklist — fyzická kontrola komponent (klient přiveze)
 
 | Komponenta | Stav (OK/poškozeno/chybí) | Poznámka |
 |---|---|---|
@@ -17,7 +17,7 @@
 | **Hydraulické kleště** | | Jaké okuje? Potřeba koupit okuje? |
 | **Kabeláž (pokud má)** | | Jaké průřezy a délky už má doma? |
 | **VE.Bus Smart dongle** | | Má ho, nebo teprve koupí? |
-| **Ostatní:** | | Co ještě Kuba přiveze? |
+| **Ostatní:** | | Co ještě klient přiveze? |
 
 ---
 
@@ -57,8 +57,8 @@
 
 - [ ] **Cenová kalkulace** — odměna konzultantovi? Paušál / hodinovka?
 - [ ] **Harmonogram** — kdy je reálné začít? (víkendy? celé dny?)
-- [ ] **Místo realizace** — u Ondry na chatě? Nebo u Kuby v Bakově?
-- [ ] **Reference** — Kuba zmínil možnost použití jako reference pro komunitu — jakou formou?
+- [ ] **Místo realizace** — u konzultanta? Nebo u klienta?
+- [ ] **Reference** — Klient zmínil možnost použití jako reference pro komunitu — jakou formou?
 
 ---
 

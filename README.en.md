@@ -32,7 +32,7 @@ Solar panel AIKO 445W → MPPT 100/50┘           │
 
 ## Why This Build?
 
-The client (Kuba) wanted a **simple, reliable, and expandable** electrical system for his Peugeot Boxer 2021 campervan conversion. The system is built around industry-standard Victron Energy components with a WattCycle 314Ah LiFePO₄ battery as the energy storage.  
+The client wanted a **simple, reliable, and expandable** electrical system for his Peugeot Boxer 2021 campervan conversion. The system is built around industry-standard Victron Energy components with a WattCycle 314Ah LiFePO₄ battery as the energy storage.  
 
 Key requirements:
 - Minimalist setup — only essential 12V loads + one 230V socket
@@ -138,15 +138,17 @@ All IoT devices use **ESPHome** framework for unified integration with **Home As
 | File | Description |
 |---|---|
 | `komplexni_dokumentace.md` | Main project documentation (Czech, 8 sections) |
-| `elektro_kuba_sladek.html` | Interactive SVG wiring diagram with hover details + shopping links |
+| `elektro_schema_boxer.html` | Interactive SVG wiring diagram with hover details + shopping links |
 | `reserse_verejne_zdroje.md` | Public source research (30+ references) |
 | `reserse_iot_embed.md` | IoT embedded devices research — ESPHome/ESP32 monitoring |
 | `priprava_schuzka_2026-07-09.md` | Client meeting preparation checklist (Czech) |
 | `jednostrankovy_summary.md` | One-page project summary (Czech) |
+| `hovor_s_klientem.txt` | Phone consultation transcript (anonymized, Czech) |
+| `whatsapp_konverzace.txt` | Raw WhatsApp conversation export (anonymized, Czech) |
 
 ## Wiring Diagram
 
-Open `elektro_kuba_sladek.html` in any browser for an **interactive SVG wiring diagram**. Hover over any component to see:
+Open `elektro_schema_boxer.html` in any browser for an **interactive SVG wiring diagram**. Hover over any component to see:
 - What it does
 - Why that specification was chosen
 - Source references (Victron manuals, standards)

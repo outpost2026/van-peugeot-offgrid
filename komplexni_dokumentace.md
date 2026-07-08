@@ -1,6 +1,6 @@
 # Projekt elektrifikace dodávky — Peugeot Boxer 2021
 
-**Klient:** Kuba Sládek  
+**Klient:** —anonymizováno—  
 **Konzultant:** Ondřej Soušek (Systeq.cz)  
 **Datum:** 2026-07-08  
 **Stav:** Příprava, konzultace, částečná realizace
@@ -101,30 +101,30 @@
 
 ### Klíčové body:
 
-1. **Prvotní kontakt** — Kuba oslovil Ondru s žádostí o pomoc s elektroinstalací dodávky. Má vše vymyšlené, ale nechce se pouštět do zapojování sám.
+1. **Prvotní kontakt** — Klient oslovil Ondru s žádostí o pomoc s elektroinstalací dodávky. Má vše vymyšlené, ale nechce se pouštět do zapojování sám.
 
-2. **Místo realizace** — Kuba může dojet do Draháně, ale dodávka je velká a těžko manévrovatelná. Nakonec se domlouvají na konzultaci s komponentami.
+2. **Místo realizace** — Klient může dojet na konzultaci, ale dodávka je velká a těžko manévrovatelná. Nakonec se domlouvají na konzultaci s komponentami.
 
-3. **Komponenty** — Kuba má 314Ah LiFePO4 baterii, Victron komponenty. MPPT regulátor má, FV zatím ne.
+3. **Komponenty** — Klient má 314Ah LiFePO4 baterii, Victron komponenty. MPPT regulátor má, FV zatím ne.
 
 4. **Servis a přenastavení** — MultiPlus se musí přenastavit na LiFePO4 profil přes příslušný modul.
 
-5. **Časový rámec** — Kuba pracuje z domu, má čas. Může dorazit o víkendu nebo následující týden. Bude upřesněno.
+5. **Časový rámec** — Klient pracuje z domu, má čas. Může dorazit o víkendu nebo následující týden. Bude upřesněno.
 
-6. **Know-how a byznys** — Ondra (konzultant) má IČO, rozjíždí vlastní projekty. Ondra má v elektroinstalacích dlouholeté zkušenosti.
+6. **Know-how a byznys** — Konzultant (Ondra) má IČO, rozjíždí vlastní projekty. Má v elektroinstalacích dlouholeté zkušenosti.
 
-7. **Podklady** — Kuba již poslal základní podklady (HTML diagram, seznam komponent) přes WhatsApp; další budou upřesněny osobně.
+7. **Podklady** — Klient již poslal základní podklady (HTML diagram, seznam komponent) přes WhatsApp; další budou upřesněny osobně.
 
-8. **Reference** — Kuba zmiňuje možnost použít projekt jako referenci pro dodávkářskou komunitu.
+8. **Reference** — Klient zmiňuje možnost použít projekt jako referenci pro dodávkářskou komunitu.
 
 
 ## 4. Diskuze
 
 ### Klíčové body:
 
-1. **Diagram** — Kuba poslal HTML diagram. Kuba si není jistý, zda je diagram zcela přesný. Odborník jej pouze viděl a prozatím zhodnotil jako OK
+1. **Diagram** — Klient poslal HTML diagram. Není si jistý, zda je diagram zcela přesný. Odborník jej pouze viděl a prozatím zhodnotil jako OK
 
-2. **Minimalistický požadavek** — Kuba chce **minimalisticky**: jen větrák, lednici, USB, jednu 230V zásuvku. Žádné čerpadlo, boiler, podlahovka atd. — ty nemá a zatím nepotřebuje.
+2. **Minimalistický požadavek** — Klient chce **minimalisticky**: jen větrák, lednici, USB, jednu 230V zásuvku. Žádné čerpadlo, boiler, podlahovka atd. — ty nemá a zatím nepotřebuje.
 
 3. **Stav komponent:**
 
@@ -135,17 +135,17 @@
 
    - ❌ **Nemá:** FV panel není na střeše, pojistková skříň není koupená
 
-4. **MultiPlus jako klíčový prvek** — Kuba zdůrazňuje, že MultiPlus zjednodušuje zapojení (není jen měnič, ale i nabíječka, přepínač sítě, power assist). Kuba má pro něj konfigurační modul (VE.Bus).
+4. **MultiPlus jako klíčový prvek** — Klient zdůrazňuje, že MultiPlus zjednodušuje zapojení (není jen měnič, ale i nabíječka, přepínač sítě, power assist). Má pro něj konfigurační modul (VE.Bus).
 
 5. **Otázka kabeláže** — rozhodneme společně
 
-6. **Setkání** — Domluva na osobní schůzku: Kuba doveze komponenty k Ondrovi na chatu, proberou projekt, domluví podmínky.
+6. **Setkání** — Domluva na osobní schůzku: klient doveze komponenty ke konzultantovi, proberou projekt, domluví podmínky.
 
-7. **Bezpečnost a soukromí** — Kuba nechtěl zveřejňovat jméno a telefon. = jméno a tel. číslo klienta je odstraněno.
+7. **Bezpečnost a soukromí** — Klient nechtěl zveřejňovat jméno a telefon. = jméno a tel. číslo klienta je odstraněno.
 
 8. **Ondrova role** — Ondra nemá přímou zkušenost s Victronem.  Nutno prozkoumat architekturu a vytvořit projekt.
 
-9. **Ostatní** — Kuba je v Bakově nad Jizerou
+9. **Ostatní** — Klient je ve Středočeském kraji
 
 
 
@@ -192,7 +192,7 @@
 
 ## 6. Požadavky klienta (minimalistický setup)
 
-Kuba aktuálně požaduje pouze:
+Klient aktuálně požaduje pouze:
 
 1. **Lednici 12V** — kompresorová, zapojená přes autozásuvku/12V okruh
 
@@ -223,7 +223,7 @@ Kuba aktuálně požaduje pouze:
 
 ### Fáze 1: Osobní konzultace (plánováno na 9. 7. 2026)
 
-- Kuba doveze komponenty k Ondrovi
+- Klient doveze komponenty ke konzultantovi
 
 - Prohlídka fyzického stavu, odsouhlasení kompatibility
 
@@ -282,7 +282,7 @@ Kuba aktuálně požaduje pouze:
 
 ## 8. Zdroje
 
-- Schéma zapojení: `elektro\_kuba\_sladek.html` (lokálně) / [https://systeq.cz/projekty/dodavka\_kuba/elektro.html](https://systeq.cz/projekty/dodavka_kuba/elektro.html)
+- Schéma zapojení: `elektro\_schema\_boxer.html` (lokálně)
 
 - Web konzultanta: [https://systeq.cz](https://systeq.cz/)
 
