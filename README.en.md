@@ -143,8 +143,7 @@ All IoT devices use **ESPHome** framework for unified integration with **Home As
 | `reserse_iot_embed.md` | IoT embedded devices research — ESPHome/ESP32 monitoring |
 | `priprava_schuzka_2026-07-09.md` | Client meeting preparation checklist (Czech) |
 | `jednostrankovy_summary.md` | One-page project summary (Czech) |
-| `hovor_s_klientem.txt` | Phone consultation transcript (anonymized, Czech) |
-| `whatsapp_konverzace.txt` | Raw WhatsApp conversation export (anonymized, Czech) |
+
 
 ## Wiring Diagram
 
