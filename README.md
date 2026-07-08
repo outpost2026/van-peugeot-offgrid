@@ -95,12 +95,10 @@ FV panel AIKO 445W → MPPT 100/50 ──┘           │
 | `reserse_iot_embed.md` | Rešerše IoT zařízení (ESP32, ESPHome, senzory) |
 | `priprava_schuzka_2026-07-09.md` | Checklist na osobní konzultaci s klientem |
 | `jednostrankovy_summary.md` | Jednostránkový přehled pro klienta |
-| `hovor_s_klientem.txt` | Transkript telefonické konzultace (anonymizováno) |
-| `whatsapp_konverzace.txt` | Raw export WhatsApp diskuze (anonymizováno) |
 
 ## Odkazy
 
-- Schéma: `elektro\_schema\_boxer.html`
+- Schéma: https://systeq.cz/projekty/dodavka_kuba/elektro.html
 - Konzultant: [systeq.cz](https://systeq.cz/)
 - Victron van manual: [Victron Van-Motorhome Manual](https://www.victronenergy.com/upload/documents/Van-Motorhome-Manual-&-Drawing-3-monitoring-setups-MultiPlus-3kVA-12V-230V-50Hz-Li-SuperPack-NG.pdf)
 - Wireframe guides: [usewireframe.com/guides](https://usewireframe.com/guides)
