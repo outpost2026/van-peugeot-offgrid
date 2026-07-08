@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Schéma zapojení — Peugeot Boxer 2021 (MultiPlus)</title>
+<style>
+  body{font-family:Arial,Helvetica,sans-serif;background:#f8fafc;color:#0f172a;margin:0;padding:20px;}
+  h1{font-size:21px;margin:0 0 4px;}
+  .sub{color:#475569;font-size:13px;margin:0 0 6px;}
+  .hint{color:#0369a1;font-size:13px;margin:0 0 14px;font-weight:bold;}
+  .wrap{background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:10px;box-shadow:0 1px 3px rgba(0,0,0,.06);overflow-x:auto;}
+  svg{width:100%;height:auto;min-width:1500px;}
+  .node{cursor:help;}
+  .node rect{transition:filter .12s, stroke-width .12s;}
+  .node:hover rect{filter:brightness(0.93);stroke-width:3.2;}
+  .tb{font-size:12.5px;font-weight:bold;text-anchor:middle;}
+  .t{font-size:11px;text-anchor:middle;fill:#1e293b;}
+  .wht{fill:#fff;}
+  .legend{display:flex;flex-wrap:wrap;gap:16px;margin:14px 2px 0;font-size:12.5px;color:#334155;}
+  .legend span{display:inline-flex;align-items:center;gap:6px;}
+  .sw{width:24px;height:4px;border-radius:2px;display:inline-block;}
+  .notes{margin:14px 2px 0;font-size:12.5px;color:#334155;line-height:1.65;}
+  .notes b{color:#b91c1c;}
+  #tip{position:fixed;display:none;max-width:360px;background:#0f172a;color:#f1f5f9;border:1px solid #334155;
+       border-radius:8px;padding:10px 12px;font-size:12.5px;line-height:1.5;box-shadow:0 6px 20px rgba(0,0,0,.25);
+       z-index:50;pointer-events:none;}
+  #tip b{color:#fbbf24;display:block;margin-bottom:4px;font-size:13px;}
+  .cab{cursor:help;}
+  #tip .td{margin-bottom:0;}
+  #tip .ts{margin-top:7px;background:#1e293b;border:1px solid #334155;border-radius:6px;padding:6px 8px;font-size:11.5px;color:#cbd5e1;line-height:1.45;}
+  #tip .tsh{display:block;color:#fbbf24;font-weight:bold;font-size:10px;letter-spacing:.4px;margin-bottom:3px;}
+</style>
+</head>
+<body>
+<h1>⚡ Schéma zapojení — Peugeot Boxer 2021 (off-grid 12V / 230V)</h1>
+<p class="sub">Jádro: Victron MultiPlus C 12/1600/70-16 · baterie Wattcycle 314Ah · solár AIKO 445W + MPPT 100/50 · stav 2026-06-16 (trunk <b>50 mm²</b>, Orion <b>GND→kostra</b> dle Victron RV SYSTEM 3)</p>
+<p class="hint">👆 Najeď myší na kterýkoli prvek — zobrazí se detail (co to je, k čemu slouží). Popisky u čar: <b>průřez · délka</b>.</p>
+
+<div class="wrap">
+<svg viewBox="0 0 1980 980" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="aR" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#dc2626"/></marker>
+    <marker id="aO" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#9333ea"/></marker>
+    <marker id="aB" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#2563eb"/></marker>
+    <marker id="aK" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#1e293b"/></marker>
+    <marker id="aG" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#16a34a"/></marker>
+  </defs>
+
+  <!-- ================= EDGES (pod boxy) ================= -->
+  <!-- 12V+ red (vstupy -> Lynx) -->
+  <path d="M215,166 H240" stroke="#dc2626" stroke-width="2.6"/>
+  <path d="M365,166 H390" stroke="#dc2626" stroke-width="2.6"/>
+  <path d="M540,166 H690" stroke="#dc2626" stroke-width="2.6" marker-end="url(#aR)"/>
+  <path d="M540,290 H565" stroke="#dc2626" stroke-width="2.4"/>
+  <path d="M660,290 H690" stroke="#dc2626" stroke-width="2.4" fill="none" marker-end="url(#aR)"/>
+  <!-- "1 stud" merge zrusen — s Distributorem ma MPPT i Orion vlastni jistenou pozici -->
+  <path d="M215,410 H240" stroke="#dc2626" stroke-width="2.6"/>
+  <path d="M365,410 H390" stroke="#dc2626" stroke-width="2.6"/>
+  <path d="M540,410 H565" stroke="#dc2626" stroke-width="2.4"/>
+  <path d="M660,410 H690" stroke="#dc2626" stroke-width="2.4" fill="none" marker-end="url(#aR)"/>
+  <!-- Lynx -> menic -->
+  <path d="M760,166 H790" stroke="#dc2626" stroke-width="2.6" marker-end="url(#aR)"/>
+  <path d="M920,166 H945" stroke="#dc2626" stroke-width="2.6" marker-end="url(#aR)"/>
+  <!-- Lynx -> 12V blok -->
+  <path d="M760,418 H790" stroke="#dc2626" stroke-width="2.4" marker-end="url(#aR)"/>
+  <path d="M885,418 H920" stroke="#dc2626" stroke-width="2.4" marker-end="url(#aR)"/>
+
+  <!-- 12V LADDER: blok + bus -> pojistka -> spotrebic ; - rail vpravo -->
+  <path d="M1090,420 H1120" stroke="#dc2626" stroke-width="2.6"/>
+  <path d="M1120,366 V744" stroke="#dc2626" stroke-width="2.6"/>
+  <path d="M1120,382 H1160" stroke="#dc2626" stroke-width="2.2"/>
+  <path d="M1226,382 H1284" stroke="#dc2626" stroke-width="2.2" marker-end="url(#aR)"/>
+  <path d="M1120,444 H1160" stroke="#dc2626" stroke-width="2.2"/>
+  <path d="M1226,444 H1284" stroke="#dc2626" stroke-width="2.2" marker-end="url(#aR)"/>
+  <path d="M1120,506 H1160" stroke="#dc2626" stroke-width="2.2"/>
+  <path d="M1226,506 H1284" stroke="#dc2626" stroke-width="2.2" marker-end="url(#aR)"/>
+  <path d="M1120,570 H1160" stroke="#dc2626" stroke-width="2.2"/>
+  <path d="M1226,570 H1284" stroke="#dc2626" stroke-width="2.2" marker-end="url(#aR)"/>
+  <path d="M1350,570 H1390" stroke="#dc2626" stroke-width="2.2" marker-end="url(#aR)"/>
+  <path d="M1120,682 H1160" stroke="#dc2626" stroke-width="2.2"/>
+  <path d="M1226,682 H1284" stroke="#dc2626" stroke-width="2.2" marker-end="url(#aR)"/>
+  <path d="M1120,744 H1160" stroke="#dc2626" stroke-width="2.2"/>
+  <path d="M1226,744 H1284" stroke="#dc2626" stroke-width="2.2" marker-end="url(#aR)"/>
+  <!-- signal kohoutky -> rele -->
+  <path d="M1317,606 V588" stroke="#64748b" stroke-width="1.6" stroke-dasharray="4 2" marker-end="url(#aK)"/>
+
+  <!-- solar orange -->
+  <path d="M215,290 H240" stroke="#9333ea" stroke-width="2.6"/>
+  <path d="M365,290 H390" stroke="#9333ea" stroke-width="2.6" marker-end="url(#aO)"/>
+
+  <!-- 230V blue: AC-OUT -->
+  <path d="M1180,160 H1210" stroke="#2563eb" stroke-width="2.6" marker-end="url(#aB)"/>
+  <path d="M1360,142 H1385 V131 H1410" stroke="#2563eb" stroke-width="2.2" fill="none" marker-end="url(#aB)"/>
+  <path d="M1360,142 H1385 V186 H1410" stroke="#2563eb" stroke-width="2.2" fill="none" marker-end="url(#aB)"/>
+  <path d="M1360,142 H1385 V241 H1410" stroke="#2563eb" stroke-width="2.2" fill="none" marker-end="url(#aB)"/>
+  <path d="M1560,131 H1600" stroke="#2563eb" stroke-width="2.2" marker-end="url(#aB)"/>
+  <path d="M1560,186 H1600" stroke="#2563eb" stroke-width="2.2" marker-end="url(#aB)"/>
+  <path d="M1560,241 H1600" stroke="#2563eb" stroke-width="2.2" marker-end="url(#aB)"/>
+  <!-- 230V blue: AC-IN -->
+  <path d="M1290,316 H1105" stroke="#2563eb" stroke-width="2.2" marker-end="url(#aB)"/>
+  <path d="M1025,295 V215" stroke="#2563eb" stroke-width="2.2" marker-end="url(#aB)"/>
+  <text x="1034" y="250" style="font-size:9px;fill:#2563eb;">AC-IN</text>
+  <text x="1196" y="112" text-anchor="middle" style="font-size:9px;fill:#2563eb;">AC-OUT</text>
+
+  <!-- negative black -> Lynx- (y790) -->
+  <path d="M30,192 H14 V806 H140" stroke="#1e293b" stroke-width="2.6" fill="none"/>
+  <path d="M962,215 H910 V790" stroke="#1e293b" stroke-width="2.6" fill="none"/>
+  <path d="M390,305 H380" stroke="#1e293b" stroke-width="2" fill="none"/>
+  <path d="M380,305 V790" stroke="#1e293b" stroke-width="2.4" fill="none"/>
+  <text x="420" y="632" text-anchor="middle" style="font-size:8.5px;font-weight:bold;fill:#0f172a;stroke:#fff;stroke-width:2px;paint-order:stroke;">− 1 stud</text>
+  <!-- Orion GND -> lokalni kostra (NE na Lynx-) dle Victron RV SYSTEM 3 -->
+  <path d="M490,430 V452" stroke="#1e293b" stroke-width="2" fill="none"/>
+  <path d="M478,452 H502 M482,457 H498 M486,462 H494" stroke="#1e293b" stroke-width="1.4" fill="none"/>
+  <text x="516" y="461" style="font-size:7.5px;font-weight:bold;fill:#1e293b;stroke:#fff;stroke-width:2px;paint-order:stroke;">GND→kostra</text>
+  <!-- 12V blok -: blok -> - rail -->
+  <path d="M1085,450 V768 H1600" stroke="#1e293b" stroke-width="2.2" fill="none"/>
+  <path d="M980,450 V790" stroke="#1e293b" stroke-width="2.8" fill="none"/>
+  <text class="cab" data-t="12V blok ↔ Lynx Distributor" data-d="16 mm², pojistka 60 A." data-s="Dimenzováno na proud bloku (~50 A) + krátká trasa. Návrat (−) stejný průřez." x="992" y="600" text-anchor="start" style="font-size:8.5px;font-weight:bold;fill:#1e293b;stroke:#fff;stroke-width:2px;paint-order:stroke;">16 mm² · max 0,5 m</text>
+  <!-- - rail (spotrebice) -->
+  <path d="M1600,372 V768" stroke="#1e293b" stroke-width="2.4" fill="none"/>
+  <path d="M1474,382 H1600" stroke="#1e293b" stroke-width="1.8" fill="none"/>
+  <path d="M1474,444 H1600" stroke="#1e293b" stroke-width="1.8" fill="none"/>
+  <path d="M1474,506 H1600" stroke="#1e293b" stroke-width="1.8" fill="none"/>
+  <path d="M1550,570 H1600" stroke="#1e293b" stroke-width="1.8" fill="none"/>
+  <path d="M1504,682 H1600" stroke="#1e293b" stroke-width="1.8" fill="none"/>
+  <path d="M1474,744 H1600" stroke="#1e293b" stroke-width="1.8" fill="none"/>
+  <!-- Lynx- -> kostra -->
+  <path d="M300,824 V860 H660 V880" stroke="#1e293b" stroke-width="3" fill="none" marker-end="url(#aK)"/>
+  <!-- prurez+delka u VSECH minusu -->
+  <text class="cab" data-t="Lynx − → kostra" data-d="Záporná žíla na kostru (jednobodové ukostření). 50 mm²." data-s="= jako kladná; nese i návrat alternátoru/Orionu karoserií. Jednobodově, bez zemních smyček. Zdroj: Wiring Unlimited." x="64" y="789" text-anchor="middle" style="font-size:8.5px;font-weight:bold;fill:#1e293b;stroke:#fff;stroke-width:2px;paint-order:stroke;">50 mm² · max 0,5 m</text>
+  <text class="cab" data-t="Trunk − : MultiPlus ↔ Lynx −" data-d="Záporná silová žíla měniče. 50 mm²." data-s="− = stejný průřez jako +. Krátký běh → na zátěž. Zdroj: Wiring Unlimited." x="836" y="560" text-anchor="middle" style="font-size:8.5px;font-weight:bold;fill:#1e293b;stroke:#fff;stroke-width:2px;paint-order:stroke;">50 mm² · max 0,4 m</text>
+  <text class="cab" data-t="MPPT ↔ Lynx Distributor" data-d="16 mm², pojistka 60 A." data-s="16 mm² = max svorka MPPT (plné využití při 50 A). Zdroj: MPPT 100/50 manuál (svorka 16 mm²/6AWG @1,6 Nm)." x="420" y="608" text-anchor="middle" style="font-size:8.5px;font-weight:bold;fill:#1e293b;stroke:#fff;stroke-width:2px;paint-order:stroke;">16 mm² · MPPT−</text>
+  <text class="cab" data-t="12V blok → světla (LED)" data-d="1,5 mm², ~3 m, pojistka 10 A." data-s="Malý proud (~3–5 A) → 1,5 mm² s rezervou, úbytek pod 3 %. Zdroj: Wiring Unlimited." x="1537" y="375" text-anchor="middle" style="font-size:8px;font-weight:bold;fill:#1e293b;stroke:#fff;stroke-width:2px;paint-order:stroke;">1,5 mm² · max 3 m</text>
+  <text class="cab" data-t="12V blok → USB / 12V zásuvky" data-d="2,5 mm², ~3 m, pojistka 10 A." data-s="2,5 mm² drží úbytek pod 3 % do ~3 m při ~10 A. Zdroj: Wiring Unlimited." x="1537" y="437" text-anchor="middle" style="font-size:8px;font-weight:bold;fill:#1e293b;stroke:#fff;stroke-width:2px;paint-order:stroke;">2,5 mm² · max 3 m</text>
+  <text class="cab" data-t="12V blok → lednice" data-d="6 mm², pojistka 15 A." data-s="Silnější kvůli úbytku na dlouhé trase — kompresor je citlivý na podpětí (jinak vypadává). Zdroj: úbytek pod 3 % na ~3 m." x="1537" y="499" text-anchor="middle" style="font-size:8px;font-weight:bold;fill:#1e293b;stroke:#fff;stroke-width:2px;paint-order:stroke;">6 mm² · max 3 m</text>
+  <text class="cab" data-t="12V blok → čerpadlo (přes relé)" data-d="2,5 mm², ~3 m, pojistka 10 A." data-s="Čerpadlo ~7–10 A; 2,5 mm² drží úbytek pod 3 % do ~3 m. Zdroj: Wiring Unlimited." x="1500" y="547" text-anchor="middle" style="font-size:8px;font-weight:bold;fill:#1e293b;stroke:#fff;stroke-width:2px;paint-order:stroke;">2,5 mm² · max 3 m</text>
+  <text class="cab" data-t="12V blok → naftové topení" data-d="6 mm², pojistka 20 A." data-s="Dimenzováno na proud topení (~10–20 A dle modelu) + délka ~3 m." x="1552" y="675" text-anchor="middle" style="font-size:8px;font-weight:bold;fill:#1e293b;stroke:#fff;stroke-width:2px;paint-order:stroke;">6 mm² · max 3 m</text>
+  <text class="cab" data-t="12V blok → MaxxFan (větrák)" data-d="1,5 mm² dvoulinka ~4 m, pojistka 5 A." data-s="Odběr ~0,2–3 A → 1,5 mm² bohatě stačí. Zdroj: manuál MaxxFan." x="1537" y="737" text-anchor="middle" style="font-size:8px;font-weight:bold;fill:#1e293b;stroke:#fff;stroke-width:2px;paint-order:stroke;">1,5 mm² · max 4 m</text>
+
+  <!-- PE green dashed -->
+  <path d="M1760,131 H1810" stroke="#16a34a" stroke-width="2" fill="none" stroke-dasharray="6 3"/>
+  <path d="M1760,186 H1810" stroke="#16a34a" stroke-width="2" fill="none" stroke-dasharray="6 3"/>
+  <path d="M1760,242 H1810" stroke="#16a34a" stroke-width="2" fill="none" stroke-dasharray="6 3"/>
+  <path d="M1180,118 V92 H1865 V110" stroke="#16a34a" stroke-width="2" fill="none" stroke-dasharray="6 3"/>
+  <path d="M1105,316 H1150 V354 H1810" stroke="#16a34a" stroke-width="2" fill="none" stroke-dasharray="6 3"/>
+  <path d="M1865,410 V900 H680 V880" stroke="#16a34a" stroke-width="2.4" fill="none" stroke-dasharray="6 3" marker-end="url(#aG)"/>
+  <text x="1786" y="124" text-anchor="middle" style="font-size:8.5px;fill:#16a34a;">PE</text>
+  <text x="1786" y="179" text-anchor="middle" style="font-size:8.5px;fill:#16a34a;">PE</text>
+  <text x="1786" y="235" text-anchor="middle" style="font-size:8.5px;fill:#16a34a;">PE</text>
+  <text class="cab" data-t="PE — ochranný vodič" data-d="6 mm² zelenožlutá → kostra (1 bod)." data-s="Sváže PE skříně měniče + AC okruhů; slepá odbočka, nenese DC. Jednobodové ukostření." x="1480" y="88" style="font-size:9px;fill:#16a34a;">PE skříň Multi · 6 mm²</text>
+  <text class="cab" data-t="PE z AC-IN (kemp)" data-d="2,5 mm² na PE sběrnici." data-s="Ochranný vodič přívodu z kempu → PE sběrnice → kostra." x="1300" y="349" style="font-size:9px;fill:#16a34a;">PE z AC-IN · 2,5 mm²</text>
+  <text class="cab" data-t="PE sběrnice → kostra" data-d="6 mm² do jednoho bodu na kostře." data-s="Veškerý PE → 1 bod (bez smyček). Slepá odbočka, clamp-test ≈ 0 A." x="900" y="894" style="font-size:9px;font-weight:bold;fill:#16a34a;">PE 6 mm² → kostra (1 bod)</text>
+
+  <!-- ================= LYNX bars ================= -->
+  <g class="node" data-t="LYNX DISTRIBUTOR + (kladná sběrnice s pojistkami)" data-d="Centrální kladná DC sběrnice se 4 integrovanými pozicemi pro MEGA pojistky (měnič 200A · MPPT 60A · Orion 60A · 12V blok 60A) + LED indikace přepálení — nahrazuje 4 externí držáky." data-s="Busbar 1000 A trvale (cínovaná měď 8×30 mm), svorky M10 / 23 Nm. M8 verze se už nevyrábí → M10. Zdroj: Victron Lynx — technické specifikace.">
+    <rect x="690" y="110" width="70" height="470" rx="7" fill="#dc2626" stroke="#991b1b"/>
+    <text x="725" y="345" class="tb wht" transform="rotate(-90 725 345)">LYNX DISTRIBUTOR +</text>
+  </g>
+  <g class="node" data-t="LYNX DISTRIBUTOR − (záporná sběrnice)" data-d="Centrální záporná DC sběrnice — sbíhá se sem mínus každého prvku (baterie, MPPT, Orion, měnič, 12V blok) a 1 bod na kostru (bez zemních smyček)." data-s="Jeden kus = obě lišty (+ i −). 1000 A, M10. Zdroj: Victron Lynx.">
+    <rect x="110" y="790" width="1560" height="34" rx="5" fill="#1e293b" stroke="#0f172a"/>
+    <text x="730" y="812" class="tb wht">LYNX DISTRIBUTOR −  (study: měnič · blok · MPPT+Orion · kostra — baterie− na boční spoj)</text>
+  </g>
+
+  <!-- ================= LEFT inputs ================= -->
+  <g class="node" data-t="Baterie Wattcycle 12V 314Ah Mini LiFePO4" data-d="Úložiště ~4 kWh (využitelné ~3,2). Svorky M8; nabíjení 0–55 °C (BMS odpojí pod 0 °C)." data-s="BMS 200 A trvale (250 A/1 s) = STROP proudu systému → podle něj se dimenzuje špička měniče i hlavní pojistka (pravidlo: jeden velký 230V spotřebič v čase). Mini = 200A BMS vs Ultra = 300A. Zdroj: datasheet Wattcycle.">
+    <rect x="30" y="140" width="185" height="52" rx="7" fill="#eef2ff" stroke="#334155"/>
+    <text x="122" y="162" class="tb">BATERIE 314Ah</text><text x="122" y="178" style="font-size:9px;text-anchor:middle;fill:#1e293b;">LiFePO4 · BMS 200A</text>
+  </g>
+  <g class="node" data-t="MEGA 200A — hlavní pojistka" data-d="Hlavní zkratová ochrana na + pólu baterie." data-s="200 A = nad zátěží ~130–160 A a sedí k interní 200A pojistce měniče. Nadproud řeší BMS, pojistka = zkrat. AIC MEGA ~1–2,5 kA; Wiring Unlimited §4.6.1: AIC ≥ zkratový proud baterie → MEGA vs Class-T (20 kA) čeká na vnitřní odpor Wattcycle. MIDI ne (nejnižší AIC).">
+    <rect x="240" y="146" width="125" height="40" rx="7" fill="#fee2e2" stroke="#b91c1c"/>
+    <text x="302" y="170" class="tb">MEGA 200A</text>
+  </g>
+  <g class="node" data-t="Battery Switch 275A — hlavní odpojovač" data-d="Hlavní ruční odpojovač celé baterie (servis/nouze)." data-s="275 A trvale > systémový proud; lze rozpojit i pod zátěží; M10 / 8 Nm. Zdroj: Victron datasheet.">
+    <rect x="390" y="146" width="150" height="40" rx="7" fill="#fff" stroke="#334155"/>
+    <text x="465" y="170" class="tb">Switch 275A</text>
+  </g>
+
+  <g class="node" data-t="Solární panel AIKO Nebular 445W lightweight" data-d="Bezesklý lehký panel (8,6 kg), naklápěcí. PV kabel 6 mm²." data-s="Isc ~13,9 A, Voc ~40,6 V → v limitech MPPT 100/50 (Isc 60 A / Voc 100 V); do série max 2 (2×40,6 = 81 V). Zdroj: datasheet AIKO + MPPT manuál.">
+    <rect x="30" y="264" width="185" height="52" rx="7" fill="#faf5ff" stroke="#9333ea"/>
+    <text x="122" y="286" class="tb">SOLÁR AIKO</text><text x="122" y="302" class="t">445W lightweight</text>
+  </g>
+  <g class="node" data-t="DC odpojovač ETI ETIMAT 10 DC 2P C20" data-d="Dvoupólový DC odpojovač/jistič solárního stringu — bezpečně odpojí panel od MPPT a chrání PV vedení.">
+    <rect x="240" y="270" width="125" height="40" rx="7" fill="#ecfeff" stroke="#0891b2"/>
+    <text x="302" y="294" class="tb">DC odpoj C20</text>
+  </g>
+  <g class="node" data-t="MPPT regulátor SmartSolar 100/50 (Bluetooth)" data-d="Solární regulátor MPPT. Baterie 16 mm², PV 6 mm². Konfigurace: Bluetooth → VictronConnect (preset LiFePO4)." data-s="Baterie 16 mm² = max svorka (6AWG @1,6 Nm, plné využití při 50 A); pojistka 55–70 A; PV max Isc 60 A / Voc 100 V. Manuál NEMÁ délkovou tabulku → průřez z proudu. Zdroj: MPPT 100/30 & 50 manuál.">
+    <rect x="390" y="270" width="150" height="40" rx="7" fill="#ecfeff" stroke="#0891b2"/>
+    <text x="465" y="294" class="tb">MPPT 100/50</text>
+  </g>
+  <g class="node" data-t="MEGA pojistka 60A — výstup MPPT (pozice v Distributoru)" data-d="Zkratová ochrana výstupu MPPT (jištěná pozice v Lynx Distributoru). Kabel 16 mm²." data-s="60 A: MPPT nabíjí max 50 A → manuál žádá 55–70 A. Zdroj: MPPT §4.2.">
+    <rect x="565" y="272" width="95" height="36" rx="7" fill="#fff7ed" stroke="#ea580c"/>
+    <text x="612" y="294" class="t">MEGA 60A</text>
+  </g>
+
+  <g class="node" data-t="Alternátor Euro6 (smart) — Peugeot Boxer 2021" data-d="Variabilní „chytrý" alternátor vozidla. Přes startovací baterii je zdrojem nabíjení obytné baterie za jízdy (přes Orion XS).">
+    <rect x="30" y="384" width="185" height="52" rx="7" fill="#eef2ff" stroke="#334155"/>
+    <text x="122" y="406" class="tb">ALTERNÁTOR</text><text x="122" y="422" class="t">Euro6 (smart)</text>
+  </g>
+  <g class="node" data-t="MEGA pojistka 60A — vstup Orionu" data-d="Zkratová ochrana vstupu Orionu (od startovačky; externí MEGA držák u motoru). Kabel 16 mm²." data-s="60 A dle Orion manuálu (60–70 A obě strany). Vstup omezen na 45 A ve VictronConnect (jinak ~55–60 A > 60A pojistka).">
+    <rect x="240" y="390" width="125" height="40" rx="7" fill="#fff7ed" stroke="#ea580c"/>
+    <text x="302" y="414" class="t">MEGA 60A</text>
+  </g>
+  <g class="node" data-t="Orion XS 12/12-50A — DC-DC z alternátoru" data-d="DC-DC nabíječ z alternátoru (za jízdy). Svorky IN+ / OUT+ / GND, GND → kostra (NE Lynx−). Kabel 16 mm². Bluetooth konfigurace." data-s="Pojistka 60 A obě strany, výstup zastropován 50 A → velká rezerva. Orion §3.3 DLE DÉLKY: pod 5 m = 16 mm²/6AWG, 5–10 m = 21,2/4AWG; max svorka 25 mm² @5,6 Nm. U tebe pod 5 m (u startovačky) → 16 mm².">
+    <rect x="390" y="390" width="150" height="40" rx="7" fill="#ecfeff" stroke="#0891b2"/>
+    <text x="465" y="414" class="tb">Orion XS</text>
+  </g>
+  <g class="node" data-t="MEGA pojistka 60A — výstup Orionu (pozice v Distributoru)" data-d="Zkratová ochrana výstupu Orionu (jištěná pozice v Lynx Distributoru). Kabel 16 mm²." data-s="60 A (Orion 60–70 A). Zdroj: Orion §3.3.">
+    <rect x="565" y="392" width="95" height="36" rx="7" fill="#fff7ed" stroke="#ea580c"/>
+    <text x="612" y="414" class="t">MEGA 60A</text>
+  </g>
+
+  <!-- ================= RIGHT: Multi + AC ================= -->
+  <g class="node" data-t="MEGA 200A — větev měniče (pozice v Distributoru)" data-d="Zkratová ochrana větve MultiPlusu (jištěná pozice v Lynx Distributoru)." data-s="200 A sedí k interní 200A pojistce měniče + trunku 50 mm². AIC viz hlavní pojistka.">
+    <rect x="790" y="146" width="130" height="40" rx="7" fill="#fee2e2" stroke="#b91c1c"/>
+    <text x="855" y="170" class="tb">MEGA 200A</text>
+  </g>
+  <g class="node" data-t="MultiPlus C 12/1600/70-16 — SRDCE systému" data-d="Srdce: měnič 1300 W (špička 3000 W) + nabíječ 70 A + přepínač sítě + zemní relé. Označení: 12 V / 1600 VA / 70 A / 16 A transfer. C = Compact (hliník, bez BT). Konfigurace: MK3-USB + VEConfigure." data-s="Trunk 50 mm² @105 °C (běh ~20 cm → na zátěž). Nastavit LiFePO4 profil + zemní relé ON. Zdroj: Compact §8 str.25; řada 800/1200/1600 VA — zvoleno 12/1600 dle zátěže + BMS 200A.">
+    <rect x="945" y="120" width="235" height="95" rx="8" fill="#dbeafe" stroke="#1d4ed8"/>
+    <text x="1062" y="150" class="tb">MULTIPLUS C</text><text x="1062" y="168" class="t">12/1600/70-16</text>
+    <text x="1062" y="186" class="t">měnič + nabíječka 70A</text><text x="1062" y="202" class="t">+ transfer + zemní relé</text>
+  </g>
+  <g class="node" data-t="2P RCD 30mA typ A — HLAVNÍ (celý AC-OUT)" data-d="Hlavní chránič celého AC-OUT (zásuvky / podlahovka / bojler)." data-s="30 mA = ochrana osob. Typ A: elektronika tvoří pulzní DC → typ AC oslepne. 2-pólový: kemp možná přehozená polarita. Funguje off-grid díky zemnímu relé H měniče. Zdroj: ČSN 33 2000-7-721 + Compact §4.3 str.11.">
+    <rect x="1210" y="120" width="150" height="44" rx="7" fill="#dbeafe" stroke="#1d4ed8"/>
+    <text x="1285" y="138" class="t" style="font-weight:bold;">RCD 2P 30mA</text><text x="1285" y="153" class="t">HLAVNÍ AC-OUT</text>
+  </g>
+  <g class="node" data-t="2P MCB — zásuvky" data-d="Jistič zásuvkového okruhu (kabel 3×2,5 mm²) za hlavním RCD." data-s="ZVOLENO 16 A (B16): transfer relé měniče = 16 A → na kempu projde 16 A (≈3,7 kW) a 2,5 mm² to unese. V režimu měniče dá Multi jen ~5,7 A → jistič chrání hlavně kabel + zkrat. Na 2,5 mm² lze i 10 A; 16 A kvůli plnému využití kempu. Zdroj: Compact §8 (transfer 16 A) + norma.">
+    <rect x="1410" y="112" width="150" height="38" rx="7" fill="#eff6ff" stroke="#2563eb"/>
+    <text x="1485" y="135" class="t">MCB 2P 16A (zásuvky)</text>
+  </g>
+  <g class="node" data-t="2P MCB — podlahovka" data-d="Jistič okruhu podlahového topení (rohož ~320 W = ~1,4 A), za hlavním RCD." data-s="10 A (B6–B10, NE B16) — kabel 3×1,5 mm² se jistí max 10 A (In ≤ Iz). Jan má pravdu: 1,5 → 10 A; projekt to dělá.">
+    <rect x="1410" y="167" width="150" height="38" rx="7" fill="#eff6ff" stroke="#2563eb"/>
+    <text x="1485" y="190" class="t">MCB 2P 10A (podlahovka)</text>
+  </g>
+  <g class="node" data-t="2P MCB 16A — bojler" data-d="Jistič okruhu bojleru (230V těleso ≤1000 W = ~4,3 A), za hlavním RCD." data-s="16 A na 2,5 mm² (chrání kabel; stačilo by i 10 A — těleso bere ~4,3 A). Pouštět samostatně (BMS 200 A).">
+    <rect x="1410" y="222" width="150" height="38" rx="7" fill="#eff6ff" stroke="#2563eb"/>
+    <text x="1485" y="245" class="t">MCB 2P 16A (bojler)</text>
+  </g>
+  <g class="node" data-t="Zásuvky 230V" data-d="Zásuvky 230 V (schuko) pro spotřebiče — za hlavním RCD + MCB.">
+    <rect x="1600" y="114" width="160" height="34" rx="7" fill="#eff6ff" stroke="#2563eb"/>
+    <text x="1680" y="135" class="t">Zásuvky 230V</text>
+  </g>
+  <g class="node" data-t="Podlahové topení 230V ~320W" data-d="Topná rohož 230 V (~320 W, 3×1,5) s termostatem, za hlavním RCD. Komfortní dohřev; hlavní topení je naftové.">
+    <rect x="1600" y="167" width="160" height="38" rx="7" fill="#eff6ff" stroke="#2563eb"/>
+    <text x="1680" y="190" class="t">Podlahovka</text>
+  </g>
+  <g class="node" data-t="Bojler vody plyn/elektro" data-d="Teplá voda plyn/elektro. Plyn off-grid (nežere baterii), 230V těleso ≤1000W jen na kempu — za hlavním RCD + vlastní MCB.">
+    <rect x="1600" y="222" width="160" height="40" rx="7" fill="#eff6ff" stroke="#2563eb"/>
+    <text x="1680" y="239" class="t">Bojler plyn/elektro</text><text x="1680" y="253" class="t" style="font-size:9px;">230V ≤1000W (kemp)</text>
+  </g>
+
+  <g class="node" data-t="2P RCBO 16A/30mA typ A — vstup z kempu" data-d="Jistič + 30mA chránič přívodu z kempu v jednom — chrání přívodní kabel (krokové napětí, kdyby selhal chránič sloupku) + možná přehozená polarita." data-s="16 A je SPRÁVNĚ, ne míň: transfer switch měniče = 16 A (Compact §8 str.25) = strop; sedí na 2,5 mm² + 16A CEE přívodku. Slabý sloupek → softwarový input limit (tovární 12 A, min 2,4 A; §5.2 str.17), NE menší jistič. 10 A jen kdyby přívod 1,5 mm².">
+    <rect x="945" y="295" width="160" height="42" rx="7" fill="#eff6ff" stroke="#2563eb"/>
+    <text x="1025" y="320" class="t">RCBO 2P (vstup)</text>
+  </g>
+  <!-- MCB 2P 16A na vstupu odebran — RCBO uz obsahuje jistic + chranic; kemp -> RCBO -> AC-IN -->
+  <g class="node" data-t="Kemp 230V — CEE přívod" data-d="Připojení k síti kempu. Vstupuje do MultiPlus AC-IN — měnič nabíjí baterii a napájí spotřebiče (transfer). Proudový limit dle sloupku.">
+    <rect x="1290" y="298" width="130" height="36" rx="7" fill="#eff6ff" stroke="#2563eb"/>
+    <text x="1355" y="320" class="t">Kemp 230V</text>
+  </g>
+
+  <!-- ================= 12V blok + zebrik spotrebicu ================= -->
+  <g class="node" data-t="MEGA pojistka 60A — přívod 12V bloku (pozice v Distributoru)" data-d="Tavná pojistka na větvi 12V bloku — sedí v JIŠTĚNÉ POZICI Lynx Distributoru (chrání přívod distribučního bloku).">
+    <rect x="790" y="400" width="95" height="36" rx="7" fill="#fff7ed" stroke="#ea580c"/>
+    <text x="837" y="422" class="t">MEGA 60A</text>
+  </g>
+  <g class="node" data-t="12V blok K735A — distribuce" data-d="12-cestný distribuční blok s LED a nožovými pojistkami. + ze přívodu (MEGA), − sběrná lišta. Každý 12V okruh má vlastní nožovou pojistku.">
+    <rect x="920" y="394" width="170" height="56" rx="7" fill="#f0fdf4" stroke="#16a34a"/>
+    <text x="1005" y="417" class="tb">12V blok</text><text x="1005" y="435" class="t">K735A · pojistky</text>
+  </g>
+
+  <!-- pojistky (zebrik) -->
+  <g class="node" data-t="Nožová pojistka 10A — světla" data-d="Pojistka okruhu LED osvětlení v 12V bloku.">
+    <rect x="1160" y="366" width="66" height="32" rx="6" fill="#fff7ed" stroke="#ea580c"/><text x="1193" y="386" class="t">10A</text>
+  </g>
+  <g class="node" data-t="Nožová pojistka 10A — USB/zásuvky" data-d="Pojistka okruhu USB nabíječek a 12V zásuvek.">
+    <rect x="1160" y="428" width="66" height="32" rx="6" fill="#fff7ed" stroke="#ea580c"/><text x="1193" y="448" class="t">10A</text>
+  </g>
+  <g class="node" data-t="Nožová pojistka 15A — lednice" data-d="Pojistka okruhu kompresorové lednice (špička při startu).">
+    <rect x="1160" y="490" width="66" height="32" rx="6" fill="#fff7ed" stroke="#ea580c"/><text x="1193" y="510" class="t">15A</text>
+  </g>
+  <g class="node" data-t="Nožová pojistka 10A — čerpadlo" data-d="Pojistka okruhu vodního čerpadla (spínané přes relé).">
+    <rect x="1160" y="554" width="66" height="32" rx="6" fill="#fff7ed" stroke="#ea580c"/><text x="1193" y="574" class="t">10A</text>
+  </g>
+  <g class="node" data-t="Nožová pojistka 20A — naftové topení" data-d="Pojistka samostatné větve naftového topení (dle modelu 20–25 A).">
+    <rect x="1160" y="666" width="66" height="32" rx="6" fill="#fff7ed" stroke="#ea580c"/><text x="1193" y="686" class="t">20A</text>
+  </g>
+  <g class="node" data-t="Nožová pojistka 5A — MaxxFan" data-d="Pojistka okruhu střešního větráku MaxxFan (odběr ~0,2–3 A; hodnota dle manuálu 5–7,5 A).">
+    <rect x="1160" y="728" width="66" height="32" rx="6" fill="#fff7ed" stroke="#ea580c"/><text x="1193" y="748" class="t">5A</text>
+  </g>
+
+  <!-- spotrebice -->
+  <g class="node" data-t="Světla 12V (LED)" data-d="Vnitřní LED osvětlení / spoty. Paralelní okruh z 12V bloku přes 10A pojistku. Orientačně ~3–5 A, vodič 1,5 mm².">
+    <rect x="1284" y="364" width="190" height="36" rx="7" fill="#f0fdf4" stroke="#16a34a"/>
+    <text x="1379" y="386" class="t">Světla LED 12V</text>
+  </g>
+  <g class="node" data-t="USB / 12V zásuvky" data-d="USB nabíječky a 12V zásuvky/zapalovač. Z 12V bloku přes 10A pojistku, vodič 2,5 mm².">
+    <rect x="1284" y="426" width="190" height="36" rx="7" fill="#f0fdf4" stroke="#16a34a"/>
+    <text x="1379" y="448" class="t">USB / 12V zásuvky</text>
+  </g>
+  <g class="node" data-t="Lednice 12V (kompresorová)" data-d="Kompresorová lednice ~5–7 A běh (špička při startu). Z 12V bloku přes 15 A pojistku, vodič 6 mm²." data-s="6 mm² (silnější) kvůli úbytku na dlouhé trase — kompresor je citlivý na podpětí, jinak vypadává. Zdroj: úbytek pod 3 % na ~3 m.">
+    <rect x="1284" y="488" width="190" height="36" rx="7" fill="#f0fdf4" stroke="#16a34a"/>
+    <text x="1379" y="510" class="t">Lednice 12V</text>
+  </g>
+  <g class="node" data-t="Relé čerpadla" data-d="Odděluje slabý signál z mikrospínače kohoutku od silového proudu pumpy. Mikrospínač spíná cívku relé (signál), kontakt relé spíná pumpu.">
+    <rect x="1284" y="552" width="66" height="36" rx="6" fill="#fff7ed" stroke="#ea580c"/><text x="1317" y="574" class="t">RELÉ</text>
+  </g>
+  <g class="node" data-t="Čerpadlo vody 12V" data-d="Vodní čerpadlo 12V (~7–10 A), bez tlakové nádoby. Z 12V bloku přes 10A pojistku, spínané relé. Vodič 2,5 mm².">
+    <rect x="1390" y="552" width="160" height="36" rx="7" fill="#f0fdf4" stroke="#16a34a"/>
+    <text x="1470" y="574" class="t">Čerpadlo 12V</text>
+  </g>
+  <g class="node" data-t="Vodovodní baterie / kohoutky (mikrospínač)" data-d="Kohoutky mají vestavěný MIKROSPÍNAČ — jejich jediná elektrická funkce je SPÍNAT ČERPADLO (slabý signál do cívky relé, ne plný proud pumpy).">
+    <rect x="1284" y="606" width="190" height="34" rx="7" fill="#f0fdf4" stroke="#16a34a"/>
+    <text x="1379" y="627" class="t">Kohoutky (mikrospínač)</text>
+  </g>
+  <g class="node" data-t="Naftové topení 5kW (12V)" data-d="Hlavní vytápění — nezávislé naftové topení (LF Bros / Planar). Vlastní větev 20–25 A z 12V bloku, vodič 6 mm². Sání zvenku, výfuk za obrys. Povinný CO + LPG detektor.">
+    <rect x="1284" y="664" width="220" height="36" rx="7" fill="#f0fdf4" stroke="#16a34a"/>
+    <text x="1394" y="686" class="t">Naftové topení 5kW</text>
+  </g>
+  <g class="node" data-t="MaxxFan — střešní větrák 12V" data-d="Střešní ventilátor MaxxAir MaxxFan (12V, 10 rychlostí, ~0,2–3 A, sání i odtah, víko umožňuje větrat i za deště). Vlastní okruh z 12V bloku přes 5A pojistku, dvoulinka 2×1,5 mm² (~4 m na střechu). Klíčový pro odvod vlhkosti při vaření a spaní.">
+    <rect x="1284" y="726" width="190" height="36" rx="7" fill="#f0fdf4" stroke="#16a34a"/>
+    <text x="1379" y="748" class="t">MaxxFan (střecha)</text>
+  </g>
+
+  <!-- ================= bottom: kostra + PE ================= -->
+  <g class="node" data-t="Kostra auta — jednobodové ukostření" data-d="Jednobodový uzemňovací bod — sváží se sem Lynx − (50 mm²) i PE (6 mm²) do JEDNOHO bodu (bez zemních smyček)." data-s="Šroub kostry = silový spoj (návrat Orionu ~45 A karoserií za jízdy). Jen 1 bod.">
+    <rect x="560" y="880" width="240" height="44" rx="7" fill="#f1f5f9" stroke="#1e293b"/>
+    <text x="680" y="907" class="tb">KOSTRA AUTA</text>
+  </g>
+  <g class="node" data-t="PE sběrnice (ochranná zem) — sbíhá se sem VŠECHEN PE" data-d="Sběrnice ochranných vodičů (žlutozelená). Sbíhá se sem PE ze VŠECH 230V → 1× 6 mm² na kostru." data-s="PE jde přímo sem, NE přes elektroniku. Slepá odbočka — nesmí nést DC návrat (clamp-test PE ≈ 0 A).">
+    <rect x="1810" y="110" width="100" height="300" rx="7" fill="#dcfce7" stroke="#16a34a"/>
+    <text x="1860" y="260" class="tb" transform="rotate(-90 1860 260)">PE sběrnice</text>
+  </g>
+
+  <!-- ================= PRUREZY + DELKY (popisky u car) ================= -->
+  <text class="cab" data-t="Trunk + : baterie ↔ Lynx ↔ MultiPlus" data-d="Hlavní kladná silová žíla. 50 mm² @105 °C." data-s="Běh ~20–40 cm → úbytek nula → dimenzováno na ZÁTĚŽ (~130–160 A), ne na délku. Zdroj: Compact §4.2 (35 mm² tovární / 70 pro 1,5–5 m) + Wiring Unlimited (proud/3 = mm²); 50 kvůli krytí 200A pojistky + rezerva pro silnější měnič." x="600" y="160" text-anchor="middle" style="font-size:9.5px;font-weight:bold;fill:#b91c1c;stroke:#fff;stroke-width:3px;paint-order:stroke;">50 mm² · max 0,4 m</text>
+  <text class="cab" data-t="Trunk + : baterie ↔ Lynx ↔ MultiPlus" data-d="Hlavní kladná silová žíla. 50 mm² @105 °C." data-s="Běh ~20–40 cm → úbytek nula → dimenzováno na ZÁTĚŽ (~130–160 A), ne na délku. Zdroj: Compact §4.2 (35 mm² tovární / 70 pro 1,5–5 m) + Wiring Unlimited (proud/3 = mm²); 50 kvůli krytí 200A pojistky + rezerva pro silnější měnič." x="302" y="139" text-anchor="middle" style="font-size:9px;font-weight:bold;fill:#b91c1c;stroke:#fff;stroke-width:2.5px;paint-order:stroke;">50 mm² · max 0,3 m</text>
+  <text class="cab" data-t="Trunk + : baterie ↔ Lynx ↔ MultiPlus" data-d="Hlavní kladná silová žíla. 50 mm² @105 °C." data-s="Běh ~20–40 cm → úbytek nula → dimenzováno na ZÁTĚŽ (~130–160 A), ne na délku. Zdroj: Compact §4.2 (35 mm² tovární / 70 pro 1,5–5 m) + Wiring Unlimited (proud/3 = mm²); 50 kvůli krytí 200A pojistky + rezerva pro silnější měnič." x="465" y="139" text-anchor="middle" style="font-size:9px;font-weight:bold;fill:#b91c1c;stroke:#fff;stroke-width:2.5px;paint-order:stroke;">50 mm² · max 0,3 m</text>
+  <text x="855" y="139" text-anchor="middle" style="font-size:7.5px;font-style:italic;fill:#92400e;stroke:#fff;stroke-width:2px;paint-order:stroke;">(pozice v Distributoru)</text>
+  <text class="cab" data-t="Trunk + : baterie ↔ Lynx ↔ MultiPlus" data-d="Hlavní kladná silová žíla. 50 mm² @105 °C." data-s="Běh ~20–40 cm → úbytek nula → dimenzováno na ZÁTĚŽ (~130–160 A), ne na délku. Zdroj: Compact §4.2 (35 mm² tovární / 70 pro 1,5–5 m) + Wiring Unlimited (proud/3 = mm²); 50 kvůli krytí 200A pojistky + rezerva pro silnější měnič." x="932" y="113" text-anchor="middle" style="font-size:9px;font-weight:bold;fill:#b91c1c;stroke:#fff;stroke-width:2.5px;paint-order:stroke;">50 mm² · max 0,4 m</text>
+  <text class="cab" data-t="MPPT ↔ Lynx Distributor" data-d="16 mm², pojistka 60 A." data-s="16 mm² = max svorka MPPT (plné využití při 50 A). Zdroj: MPPT 100/50 manuál (svorka 16 mm²/6AWG @1,6 Nm)." x="612" y="333" text-anchor="middle" style="font-size:9px;font-weight:bold;fill:#b91c1c;stroke:#fff;stroke-width:2.5px;paint-order:stroke;">16 mm² · max 0,5 m</text>
+  <text x="668" y="318" text-anchor="middle" style="font-size:7.5px;font-style:italic;fill:#92400e;stroke:#fff;stroke-width:2px;paint-order:stroke;">(v Distributoru)</text>
+  <text class="cab" data-t="Orion ↔ startovačka / Lynx" data-d="16 mm², pojistka 60 A." data-s="Orion §3.3: pod 5 m → 16 mm² (manuálem dané minimum); výstup zastropován 50 A → rezerva; max svorka 25 mm². U tebe pod 5 m." x="302" y="383" text-anchor="middle" style="font-size:9px;font-weight:bold;fill:#b91c1c;stroke:#fff;stroke-width:2.5px;paint-order:stroke;">16 mm² · max 2 m</text>
+  <text class="cab" data-t="Orion ↔ startovačka / Lynx" data-d="16 mm², pojistka 60 A." data-s="Orion §3.3: pod 5 m → 16 mm² (manuálem dané minimum); výstup zastropován 50 A → rezerva; max svorka 25 mm². U tebe pod 5 m." x="465" y="383" text-anchor="middle" style="font-size:9px;font-weight:bold;fill:#b91c1c;stroke:#fff;stroke-width:2.5px;paint-order:stroke;">16 mm² · max 0,3 m</text>
+  <text class="cab" data-t="12V blok ↔ Lynx Distributor" data-d="16 mm², pojistka 60 A." data-s="Dimenzováno na proud bloku (~50 A) + krátká trasa. Návrat (−) stejný průřez." x="612" y="453" text-anchor="middle" style="font-size:9px;font-weight:bold;fill:#b91c1c;stroke:#fff;stroke-width:2.5px;paint-order:stroke;">16 mm² · max 0,5 m</text>
+  <text x="668" y="438" text-anchor="middle" style="font-size:7.5px;font-style:italic;fill:#92400e;stroke:#fff;stroke-width:2px;paint-order:stroke;">(v Distributoru)</text>
+  <text x="820" y="393" text-anchor="middle" style="font-size:7.5px;font-style:italic;fill:#92400e;stroke:#fff;stroke-width:2px;paint-order:stroke;">(v Distributoru)</text>
+  <text class="cab" data-t="12V blok ↔ Lynx Distributor" data-d="16 mm², pojistka 60 A." data-s="Dimenzováno na proud bloku (~50 A) + krátká trasa. Návrat (−) stejný průřez." x="855" y="446" text-anchor="middle" style="font-size:9px;font-weight:bold;fill:#b91c1c;stroke:#fff;stroke-width:2.5px;paint-order:stroke;">16 mm² · max 0,5 m</text>
+  <text class="cab" data-t="Solár: panel → MPPT (PV)" data-d="6 mm² solární (UV / PV1-F), ~5 m/pól." data-s="Isc panelu ~14 A → 4 mm² by proudově stačilo; 6 mm² kvůli úbytku na ~5 m na střechu. Zdroj: Isc AIKO + praxe PV." x="300" y="262" text-anchor="middle" style="font-size:9px;font-weight:bold;fill:#7e22ce;stroke:#fff;stroke-width:2.5px;paint-order:stroke;">6 mm² (PV) · max 5 m/pól</text>
+  <!-- (duplicitni PV popisek odstranen — kolidoval s nazvem boxu SOLAR AIKO) -->
+  <!-- 12V zebrik prurez+delka -->
+  <text class="cab" data-t="12V blok → světla (LED)" data-d="1,5 mm², ~3 m, pojistka 10 A." data-s="Malý proud (~3–5 A) → 1,5 mm² s rezervou, úbytek pod 3 %. Zdroj: Wiring Unlimited." x="1255" y="376" text-anchor="middle" style="font-size:8.5px;font-weight:bold;fill:#b91c1c;stroke:#fff;stroke-width:2.5px;paint-order:stroke;">1,5 mm² · max 3 m</text>
+  <text class="cab" data-t="12V blok → USB / 12V zásuvky" data-d="2,5 mm², ~3 m, pojistka 10 A." data-s="2,5 mm² drží úbytek pod 3 % do ~3 m při ~10 A. Zdroj: Wiring Unlimited." x="1255" y="438" text-anchor="middle" style="font-size:8.5px;font-weight:bold;fill:#b91c1c;stroke:#fff;stroke-width:2.5px;paint-order:stroke;">2,5 mm² · max 3 m</text>
+  <text class="cab" data-t="12V blok → lednice" data-d="6 mm², pojistka 15 A." data-s="Silnější kvůli úbytku na dlouhé trase — kompresor je citlivý na podpětí (jinak vypadává). Zdroj: úbytek pod 3 % na ~3 m." x="1255" y="500" text-anchor="middle" style="font-size:8.5px;font-weight:bold;fill:#b91c1c;stroke:#fff;stroke-width:2.5px;paint-order:stroke;">6 mm² · max 3 m</text>
+  <text class="cab" data-t="12V blok → čerpadlo (přes relé)" data-d="2,5 mm², ~3 m, pojistka 10 A." data-s="Čerpadlo ~7–10 A; 2,5 mm² drží úbytek pod 3 % do ~3 m. Zdroj: Wiring Unlimited." x="1255" y="564" text-anchor="middle" style="font-size:8.5px;font-weight:bold;fill:#b91c1c;stroke:#fff;stroke-width:2.5px;paint-order:stroke;">2,5 mm² · max 3 m</text>
+  <text class="cab" data-t="12V blok → naftové topení" data-d="6 mm², pojistka 20 A." data-s="Dimenzováno na proud topení (~10–20 A dle modelu) + délka ~3 m." x="1255" y="675" text-anchor="middle" style="font-size:8.5px;font-weight:bold;fill:#b91c1c;stroke:#fff;stroke-width:2.5px;paint-order:stroke;">6 mm² · max 3 m</text>
+  <text class="cab" data-t="12V blok → MaxxFan (větrák)" data-d="1,5 mm² dvoulinka ~4 m, pojistka 5 A." data-s="Odběr ~0,2–3 A → 1,5 mm² bohatě stačí. Zdroj: manuál MaxxFan." x="1255" y="737" text-anchor="middle" style="font-size:8.5px;font-weight:bold;fill:#b91c1c;stroke:#fff;stroke-width:2.5px;paint-order:stroke;">1,5 mm² · max 4 m</text>
+  <!-- AC prurezy -->
+  <text x="1580" y="126" text-anchor="middle" style="font-size:9px;font-weight:bold;fill:#1d4ed8;stroke:#fff;stroke-width:2.5px;paint-order:stroke;">3×2,5</text>
+  <text x="1580" y="181" text-anchor="middle" style="font-size:9px;font-weight:bold;fill:#1d4ed8;stroke:#fff;stroke-width:2.5px;paint-order:stroke;">3×1,5</text>
+  <text x="1580" y="237" text-anchor="middle" style="font-size:9px;font-weight:bold;fill:#1d4ed8;stroke:#fff;stroke-width:2.5px;paint-order:stroke;">3×2,5</text>
+  <text class="cab" data-t="230V AC-IN / zásuvky" data-d="3×2,5 mm² (L+N+PE), jistič 16 A." data-s="2,5 mm² se jistí 16 A (norma) a sedí na 16A transfer/přívodku. CYKY (položeno) / nové H07RN-F gumové. Zdroj: norma In ≤ Iz + transfer 16 A." x="1190" y="306" text-anchor="middle" style="font-size:9px;font-weight:bold;fill:#1d4ed8;stroke:#fff;stroke-width:2.5px;paint-order:stroke;">3×2,5 mm² · max 1 m</text>
+  <!-- mínus + kostra -->
+  <text x="320" y="854" style="font-size:9px;fill:#1e293b;">50 mm² · max 0,5 m · kostra = VLASTNÍ stud Distributoru − (baterie− jde na boční spoj); šroub kostry = silový spoj — návrat Orionu</text>
+  <text x="1610" y="496" style="font-size:8.5px;fill:#475569;">− sběrnice</text>
+  <text x="1610" y="508" style="font-size:8.5px;fill:#475569;">12V bloku</text>
+
+  <!-- KOMENTAR: sdileny stud na Lynx -->
+  <rect x="40" y="470" width="332" height="74" rx="6" fill="#fef9c3" stroke="#ca8a04"/>
+  <text x="52" y="489" style="font-size:10.5px;font-weight:bold;fill:#92400e;">⚠ LYNX DISTRIBUTOR M10 — pojistky uvnitř</text>
+  <text x="52" y="506" style="font-size:9px;fill:#92400e;">+ : 4 jištěné pozice (měnič·MPPT·Orion·blok); baterie+ = boční spoj</text>
+  <text x="52" y="520" style="font-size:9px;fill:#92400e;">− : měnič · blok · MPPT · kostra; baterie− = boční spoj · Orion = GND→kostra</text>
+  <text x="52" y="536" style="font-size:9px;fill:#92400e;">12V spotřebiče: + přes pojistku, − zpět do bloku.</text>
+</svg>
+</div>
+
+<div class="legend">
+  <span><i class="sw" style="background:#dc2626"></i>12V + (kladný)</span>
+  <span><i class="sw" style="background:#1e293b"></i>12V − / kostra</span>
+  <span><i class="sw" style="background:#9333ea"></i>solár (PV)</span>
+  <span><i class="sw" style="background:#2563eb"></i>230V AC</span>
+  <span><i class="sw" style="background:#16a34a"></i>PE (uzemnění)</span>
+</div>
+
+<div class="notes">
+<b>Provozní pravidla:</b> Pojistky = zkratová ochrana (nadproud řeší BMS ~200 A) · jen JEDEN velký 230V spotřebič v čase · žádné nárazové/induktivní zátěže (shodí BMS) · podlahovku nepouštět při el. tlakovém hrnci · součet nabíjení &lt;~150 A (nastavit limit MultiPlusu) · MultiPlus montovat svisle · baterii 27 kg pevně ukotvit ·
+<b>vše na 230V dvoupólové</b> (kemp = možná přehozená polarita) · zemní relé ON ve VEConfigure · bez revize → otestovat RCD testerem v obou režimech + kontrola kolegou. Plný popis: elektro projekt - hlavni dokument.md (§19).
+</div>
+
+<style>
+  .complist{margin:26px 2px 0;}
+  .complist h2{font-size:18px;margin:0 0 4px;color:#0f172a;}
+  .complist .ch{color:#475569;font-size:12.5px;margin:0 0 12px;}
+  .ci{padding:9px 12px;border:1px solid #e2e8f0;border-radius:8px;margin-bottom:8px;background:#fff;font-size:13px;line-height:1.5;}
+  .ci .nm{font-weight:bold;color:#0f172a;font-size:14px;}
+  .ci .st{font-size:11px;padding:1px 7px;border-radius:10px;margin-left:6px;}
+  .ci .ok{background:#dcfce7;color:#166534;} .ci .buy{background:#fef9c3;color:#854d0e;} .ci .ret{background:#fee2e2;color:#991b1b;}
+  .ci .pu{color:#334155;} .ci .pu b{color:#0f172a;}
+  .ci a{color:#2563eb;text-decoration:none;font-weight:bold;} .ci a:hover{text-decoration:underline;}
+</style>
+<div class="complist">
+<h2>📋 Kompletní přehled prvků</h2>
+<p class="ch">Každý prvek schématu: k čemu je, co dělá, kde koupit. Stav: <span class="st ok">doma/objednáno</span> <span class="st buy">koupit</span> <span class="st ret">vrací se</span></p>
+
+<h2 style="font-size:16px;margin:6px 0 4px;color:#0f172a;">🔌 Průřezy kabelů</h2>
+<table style="border-collapse:collapse;font-size:12.5px;margin:0 0 8px;width:100%;max-width:820px;">
+<tr style="background:#f1f5f9;"><th style="text-align:left;padding:6px 10px;border:1px solid #e2e8f0;">Okruh</th><th style="text-align:left;padding:6px 10px;border:1px solid #e2e8f0;">Průřez</th><th style="text-align:left;padding:6px 10px;border:1px solid #e2e8f0;">Pojistka / pozn.</th></tr>
+<tr><td style="padding:5px 10px;border:1px solid #e2e8f0;">Baterie ↔ Lynx (hlavní)</td><td style="padding:5px 10px;border:1px solid #e2e8f0;"><b>50 mm²</b></td><td style="padding:5px 10px;border:1px solid #e2e8f0;">MEGA 200A</td></tr>
+<tr><td style="padding:5px 10px;border:1px solid #e2e8f0;">MultiPlus ↔ Distributor (DC)</td><td style="padding:5px 10px;border:1px solid #e2e8f0;"><b>50 mm²</b></td><td style="padding:5px 10px;border:1px solid #e2e8f0;">MEGA 200A (pozice v Distributoru); min. 50 mm² dle Victron</td></tr>
+<tr><td style="padding:5px 10px;border:1px solid #e2e8f0;">Lynx− → kostra</td><td style="padding:5px 10px;border:1px solid #e2e8f0;"><b>50 mm²</b></td><td style="padding:5px 10px;border:1px solid #e2e8f0;">jednobodové ukostření</td></tr>
+<tr><td style="padding:5px 10px;border:1px solid #e2e8f0;">MPPT ↔ Distributor</td><td style="padding:5px 10px;border:1px solid #e2e8f0;"><b>16 mm²</b></td><td style="padding:5px 10px;border:1px solid #e2e8f0;">MEGA 60A (v Distributoru)</td></tr>
+<tr><td style="padding:5px 10px;border:1px solid #e2e8f0;">Orion XS (IN+ · OUT+ · GND)</td><td style="padding:5px 10px;border:1px solid #e2e8f0;"><b>16 mm²</b></td><td style="padding:5px 10px;border:1px solid #e2e8f0;">60A obě strany (IN u startovačky, OUT v Distributoru); <b>GND → kostra</b> (negativ přes kostru, NE Lynx−)</td></tr>
+<tr><td style="padding:5px 10px;border:1px solid #e2e8f0;">12V blok ↔ Distributor (přívod)</td><td style="padding:5px 10px;border:1px solid #e2e8f0;"><b>16 mm²</b></td><td style="padding:5px 10px;border:1px solid #e2e8f0;">MEGA 60A (v Distributoru)</td></tr>
+<tr style="background:#f0fdf4;"><td style="padding:5px 10px;border:1px solid #e2e8f0;">12V blok → světla</td><td style="padding:5px 10px;border:1px solid #e2e8f0;"><b>1,5 mm²</b></td><td style="padding:5px 10px;border:1px solid #e2e8f0;">nožová 10A</td></tr>
+<tr style="background:#f0fdf4;"><td style="padding:5px 10px;border:1px solid #e2e8f0;">12V blok → USB/zásuvky</td><td style="padding:5px 10px;border:1px solid #e2e8f0;"><b>2,5 mm²</b></td><td style="padding:5px 10px;border:1px solid #e2e8f0;">nožová 10A</td></tr>
+<tr style="background:#f0fdf4;"><td style="padding:5px 10px;border:1px solid #e2e8f0;">12V blok → lednice</td><td style="padding:5px 10px;border:1px solid #e2e8f0;"><b>6 mm²</b></td><td style="padding:5px 10px;border:1px solid #e2e8f0;">nožová 15A (špička startu)</td></tr>
+<tr style="background:#f0fdf4;"><td style="padding:5px 10px;border:1px solid #e2e8f0;">12V blok → čerpadlo (přes relé)</td><td style="padding:5px 10px;border:1px solid #e2e8f0;"><b>2,5 mm²</b></td><td style="padding:5px 10px;border:1px solid #e2e8f0;">nožová 10A</td></tr>
+<tr><td style="padding:5px 10px;border:1px solid #e2e8f0;">Naftové topení (větev)</td><td style="padding:5px 10px;border:1px solid #e2e8f0;"><b>6 mm²</b></td><td style="padding:5px 10px;border:1px solid #e2e8f0;">nožová 20A</td></tr>
+<tr><td style="padding:5px 10px;border:1px solid #e2e8f0;">Solár panel → MPPT (PV)</td><td style="padding:5px 10px;border:1px solid #e2e8f0;"><b>6 mm²</b></td><td style="padding:5px 10px;border:1px solid #e2e8f0;">MC4 solární kabel</td></tr>
+<tr><td style="padding:5px 10px;border:1px solid #e2e8f0;">230V AC-IN / zásuvky</td><td style="padding:5px 10px;border:1px solid #e2e8f0;"><b>3×2,5 mm²</b></td><td style="padding:5px 10px;border:1px solid #e2e8f0;">3G2,5 (16 A)</td></tr>
+<tr><td style="padding:5px 10px;border:1px solid #e2e8f0;">230V podlahovka</td><td style="padding:5px 10px;border:1px solid #e2e8f0;"><b>3×1,5 mm²</b></td><td style="padding:5px 10px;border:1px solid #e2e8f0;">vlastní okruh</td></tr>
+<tr><td style="padding:5px 10px;border:1px solid #e2e8f0;">PE → kostra</td><td style="padding:5px 10px;border:1px solid #e2e8f0;"><b>6 mm²</b></td><td style="padding:5px 10px;border:1px solid #e2e8f0;">žluto-zelená</td></tr>
+<tr style="background:#fef9c3;"><td style="padding:5px 10px;border:1px solid #e2e8f0;">Mínus (−) obecně</td><td style="padding:5px 10px;border:1px solid #e2e8f0;"><b>= jako plus</b></td><td style="padding:5px 10px;border:1px solid #e2e8f0;">každý − stejný průřez jako jeho +</td></tr>
+</table>
+<p class="ch">⚠️ Průřezy 12V spotřebičů jsou orientační; délka ~3 m počítá s rozvodem na druhou stranu auta. <b>Trunk baterie↔Multi ~20 cm → 50 mm² @105 °C (dimenzováno na zátěž, ne na úbytek; Victron Compact §4.2 dává 70 mm² až pro 1,5–5 m).</b> Orion: GND→kostra (dle Victron RV SYSTEM 3).</p>
+
+<div class="ci"><span class="nm">AIKO Nebular 445 W lightweight</span> <span class="st ok">objednáno</span><br><span class="pu"><b>Solární panel.</b> Bezesklý/lehký (8,6 kg), naklápěcí; DC výstup → MPPT. Voc ~40 V, Isc ~14 A.</span> — <a href="https://www.vseprokaravan.cz/panely/445w-ultralehky-fotovoltaicky-solarni-panel-aiko-nebular/" target="_blank">🔗 vseprokaravan</a></div>
+
+<div class="ci"><span class="nm">Baterie Wattcycle 12V 314 Ah Mini LiFePO4</span> <span class="st ok">doma</span><br><span class="pu"><b>Úložiště energie</b> (~4 kWh, využitelné ~3,2). BMS 200 A (špička 250 A/1 s), odpojí pod 0 °C. Svorky M8, 27 kg.</span> — <a href="https://eu.wattcycle.com/products/12v-314ah-mini-lifepo4-battery-with-bluetooth" target="_blank">🔗 eu.wattcycle</a></div>
+
+<div class="ci"><span class="nm">Battery Switch 275 A</span> <span class="st ok">doma</span><br><span class="pu"><b>Hlavní ruční odpojovač</b> celé baterie (servis/nouze). Rozpínat jen bez zátěže. M10.</span> — <a href="https://eshop.neosolar.cz/bateriovy-odpojovac-275a/" target="_blank">🔗 neosolar</a></div>
+
+<div class="ci"><span class="nm">MEGA 200 A + držák</span> <span class="st buy">koupit ×2</span><br><span class="pu"><b>Hlavní zkratová pojistka pro lithium</b> (+ pól baterie i větev měniče). Victron MEGA (jako v Lynx Distributoru) — pro 1× 12V baterii dostačující; nadproud řeší BMS. Nejvyšší AIC má Class-T (jen z EU).</span> — <a href="https://www.kvelektro.cz/pojistka-mega-fuse-victron-energy-200a-80v-vhodne-pro-48v-dc-systemy-cip138200020-p2027307" target="_blank">🔗 kvelektro (MEGA 200A)</a></div>
+
+<div class="ci"><span class="nm">CO + LPG detektor</span> <span class="st buy">koupit</span><br><span class="pu"><b>Bezpečnost.</b> CO detektor (z naftového topení) k lůžku, EN 50291-2. LPG detektor nízko (vaří se na plyn). Samostatné krabičky s vlastní baterií.</span> — <span class="ch">OBI / Hornbach / Allegro</span></div>
+
+<div class="ci"><span class="nm">Čerpadlo vody 12V + relé</span> <span class="st buy">koupit</span><br><span class="pu"><b>Tlačí vodu</b> ke kohoutkům. Spínané přes RELÉ z mikrospínačů kohoutků (bez tlakové nádoby). Vlastní 10 A pojistka, 2,5 mm².</span> — <span class="ch">Shurflo / Seaflo</span></div>
+
+<div class="ci"><span class="nm">DC odpojovač ETI ETIMAT 10 DC 2P C20</span> <span class="st buy">koupit</span><br><span class="pu"><b>Odpojí solární panel</b> od MPPT (servis, ochrana PV vedení).</span> — <a href="https://www.kvelektro.cz/jistic-eti-etimat-10-dc-2p-c-20a-6ka-002138717-p1309330" target="_blank">🔗 kvelektro</a></div>
+
+<div class="ci"><span class="nm">Kemp 230 V (CEE přívod)</span> <span class="st buy">volitelně</span><br><span class="pu"><b>Připojení k síti kempu</b> → MultiPlus AC-IN (nabíjení + průchozí napájení).</span> — <a href="https://www.nomadem.cz/230v-cee-pripojka_z624/" target="_blank">🔗 nomadem</a></div>
+
+<div class="ci"><span class="nm">Kostra auta</span><br><span class="pu"><b>Jednobodový uzemňovací bod.</b> Sváží se sem Lynx − (50 mm²) i PE sběrnice (6 mm²) — vše do jednoho bodu (bez zemních smyček).</span></div>
+
+<div class="ci"><span class="nm">Lednice 12V (kompresorová)</span> <span class="st buy">koupit</span><br><span class="pu"><b>Chlazení.</b> Kompresorová lednice ~5–7 A běh (špička při startu). Z 12V bloku přes 15 A pojistku, <b>6 mm²</b> (silnější kvůli úbytku na dlouhé trase — kompresor citlivý na podpětí).</span> — <span class="ch">Indel B Cruise 85 OFF · 85 l · 17 019 Kč — vseprokaravan</span></div>
+
+<div class="ci"><span class="nm">Lynx Distributor M10</span> <span class="st buy">koupit</span><br><span class="pu"><b>Centrální DC sběrnice s integrovanými pojistkami.</b> 1 kus = obě lišty (+ i −); na + straně <b>4 jištěné pozice s MEGA</b> (měnič 200A · MPPT 60A · Orion 60A · blok 60A) + LED indikace přepálení. <b>Baterie + i − → boční daisy-chain spoj</b> (jištěná na pólu → OK). Šetří 4 externí držáky = místo v boxu. Jen M10 (M8 se už nevyrábí) — oka M10 na straně Distributoru. <i>Nahrazuje Lynx Power In (doma → prodat).</i></span> — <a href="https://www.victronenergy.com/dc-distribution-systems/lynx-distributor" target="_blank">🔗 Victron (oficiální)</a> · <span class="ch">koupit: solvolte / neosolar</span></div>
+
+<!-- karta MCB 2P 16A (vstup) odebrána — na vstupu je jen RCBO 2P (jistič + chránič v jednom) -->
+
+<div class="ci"><span class="nm">MEGA 60 A + držák (×4)</span> <span class="st ok">na cestě / koupit</span><br><span class="pu"><b>Jištění větví</b> (MPPT, Orion vstup/výstup, 12V blok). Victron MEGA 60A u sběrnice (ekvivalent dříve uváděného MRBF, dostupný v ČR).</span> — <a href="https://www.mulac.cz/pojistky-pojistkova-pouzdra/mega-pojistky/victron-energy-mega-pojistka-60a-80v.htm" target="_blank">🔗 mulac (MEGA 60A)</a></div>
+
+<div class="ci"><span class="nm">MPPT SmartSolar 100/50</span> <span class="st ok">objednáno</span><br><span class="pu"><b>Solární regulátor</b> (až 50 A). Bluetooth. 100 V max vstup.</span> — <a href="https://www.vseprokaravan.cz/solarni-systemy/mppt-solarni-regulator-victron-energy-smartsolar-100-50/" target="_blank">🔗 vseprokaravan</a></div>
+
+<div class="ci"><span class="nm">MultiPlus C 12/1600/70-16</span> <span class="st buy">koupit</span><br><span class="pu"><b>SRDCE systému.</b> Měnič 1300 W + nabíječka 70 A + transfer + zemní relé. Vnitřní 200 A. Most 12V↔230V.</span> — <a href="https://www.mulac.cz/p/victron-energy-multiplus-c-12-1600-70-16-menic-napeti-nabijec-ups-12v-70a-1600w" target="_blank">🔗 mulac (18 445 Kč)</a> / <a href="https://wsp-energy.solutions/nl/victron-multiplus-12-volt/338-victron-energy-phoenix-multiplus-compact-121600-70-16.html" target="_blank">WSP NL (~16 370)</a></div>
+
+<div class="ci"><span class="nm">Naftové topení 5 kW (12V)</span> <span class="st buy">koupit</span><br><span class="pu"><b>Hlavní vytápění.</b> Nezávislé naftové topení (LF Bros / Planar). Vlastní větev 20–25 A z 12V bloku, 6 mm². Sání zvenku, výfuk za obrys.</span> — <span class="ch">LF Bros / Planar</span></div>
+
+<div class="ci"><span class="nm">Orion XS 12/12-50A</span> <span class="st ok">doma</span><br><span class="pu"><b>DC-DC nabíječka z alternátoru</b> za jízdy (50 A). Vestavěná detekce běhu motoru (bez remote drátu). <b>3 svorky: IN+ · OUT+ · GND</b> — IN+ od startovačky (60A), OUT+ na Lynx (60A), <b>GND → KOSTRA</b> (negativ přes kostru, NE na Lynx−!). Kabel 16 mm² (max svorka 21 mm²). Dle Victron RV SYSTEM 3.</span> — <a href="https://eshop.neosolar.cz/dc-dc-nabijecka-orion-xs-12-12-50a-neizolovana/" target="_blank">🔗 neosolar</a></div>
+
+<div class="ci"><span class="nm">PE sběrnice</span> <span class="st buy">koupit</span><br><span class="pu"><b>Sběrný bod ochranného vodiče (uzemnění 230V).</b> Spojuje PE z AC-IN, všech AC-OUT okruhů a zemnící šroub skříně MultiPlusu → 1× na kostru (6 mm² ž/z).</span> — <span class="ch">PE svorkovnice</span></div>
+
+<div class="ci"><span class="nm">Podlahové topení 230 V</span> <span class="st buy">koupit</span><br><span class="pu"><b>Komfortní dohřev podlahy.</b> Rohož ~320 W na vlastním okruhu (2P MCB) + termostat.</span> — <span class="ch">model dle výběru</span></div>
+
+<div class="ci"><span class="nm">RCBO 2P typ A 16 A/30 mA (VSTUP z kempu)</span> <span class="st buy">koupit</span><br><span class="pu"><b>Jistič + chránič přívodu z kempu v jednom.</b> 30 mA chránič + 16 A jistič, <b>oba póly jištěné</b>. ⚠️ Pozor: Eaton „PFL6 …/1N" jistí jen 1 pól — koupit <b>pravý 2P RCBO, typ A</b> (ne 1P+N).</span> — <span class="ch">kvelektro/palmat (pravý 2P, typ A)</span></div>
+
+<div class="ci"><span class="nm">RCD 2P 30 mA typ A (hlavní AC-OUT)</span> <span class="st buy">koupit</span><br><span class="pu"><b>Hlavní chránič</b> celého AC-OUT (zásuvky/podlahovka/bojler) — v režimu měniče i na kempu.</span> — <a href="https://www.kvelektro.cz/" target="_blank">🔗 kvelektro</a> / palmat</div>
+
+<div class="ci"><span class="nm">Světla LED 12V</span> <span class="st buy">koupit</span><br><span class="pu"><b>Vnitřní osvětlení.</b> LED panely/spoty, paralelní okruh z 12V bloku přes 10 A pojistku, 1,5 mm².</span> — <span class="ch">jednotlivě</span></div>
+
+<div class="ci"><span class="nm">MaxxFan — střešní větrák 12V</span> <span class="st buy">koupit</span><br><span class="pu"><b>Větrání kabiny.</b> MaxxAir MaxxFan (12V, 10 rychlostí, ~0,2–3 A, sání i odtah, víko do deště). Vlastní okruh z 12V bloku: pojistka 5 A + dvoulinka 2×1,5 mm² (~4 m na střechu).</span> — <span class="ch">vseprokaravan / Obelink (model dle výběru)</span></div>
+
+<div class="ci"><span class="nm">USB / 12V zásuvky</span> <span class="st buy">koupit</span><br><span class="pu"><b>Nabíjení.</b> USB nabíječky + 12V zásuvky/zapalovač, z 12V bloku přes 10 A pojistku, 2,5 mm².</span> — <span class="ch">jednotlivě</span></div>
+
+<div class="ci"><span class="nm">VE.Bus Smart dongle</span> <span class="st buy">doporučeno</span><br><span class="pu"><b>Bluetooth okno do MultiPlusu.</b> Sledování + nastavení vstupního limitu z mobilu. MultiPlus sám Bluetooth nemá.</span> — <a href="https://www.battery.cz/victron-energy-rozhrani-ve-bus-smart-dongle/" target="_blank">🔗 Battery.cz (2 237 Kč)</a></div>
+
+<div class="ci"><span class="nm">Vodovodní baterie / kohoutky (mikrospínač)</span> <span class="st buy">koupit</span><br><span class="pu"><b>Spínače čerpadla.</b> Vestavěný mikrospínač → spíná relé → pumpa. Vede jen signál (ne plný proud). Bez tlakové nádoby.</span> — <span class="ch">Reich / Comet</span></div>
+
+<div class="ci"><span class="nm">Zásuvky 230 V</span> <span class="st buy">koupit</span><br><span class="pu"><b>Napájení 230V spotřebičů.</b> Schuko zásuvky za chráničem.</span> — <span class="ch">OBI / Hornbach</span></div>
+
+<div class="ci"><span class="nm">12V blok K735A</span> <span class="st ok">na cestě</span><br><span class="pu"><b>Distribuce 12 V</b> na jednotlivé okruhy. 12-cestný blok s LED a nožovými pojistkami — každý okruh vlastní pojistka, společná − lišta.</span> — <span class="ch">mulac</span></div>
+
+</div>
+
+<div id="tip"></div>
+
+<script>
+(function(){
+  var tip = document.getElementById('tip');
+  // mapa: nazev prvku (data-t) -> odkaz na e-shop (otevre se v novem okne)
+  var links = {
+    "Baterie Wattcycle 12V 314Ah Mini LiFePO4":"https://eu.wattcycle.com/products/12v-314ah-mini-lifepo4-battery-with-bluetooth",
+    "MEGA 200A — hlavní pojistka":"https://www.kvelektro.cz/pojistka-mega-fuse-victron-energy-200a-80v-vhodne-pro-48v-dc-systemy-cip138200020-p2027307",
+    "MEGA 200A — větev měniče":"https://www.kvelektro.cz/pojistka-mega-fuse-victron-energy-200a-80v-vhodne-pro-48v-dc-systemy-cip138200020-p2027307",
+    "Battery Switch 275A — hlavní odpojovač":"https://eshop.neosolar.cz/bateriovy-odpojovac-275a/",
+    "Solární panel AIKO Nebular 445W lightweight":"https://www.vseprokaravan.cz/panely/445w-ultralehky-fotovoltaicky-solarni-panel-aiko-nebular/",
+    "DC odpojovač ETI ETIMAT 10 DC 2P C20":"https://www.kvelektro.cz/jistic-eti-etimat-10-dc-2p-c-20a-6ka-002138717-p1309330",
+    "MPPT regulátor SmartSolar 100/50 (Bluetooth)":"https://www.vseprokaravan.cz/solarni-systemy/mppt-solarni-regulator-victron-energy-smartsolar-100-50/",
+    "MEGA pojistka 60A — výstup MPPT":"https://www.mulac.cz/pojistky-pojistkova-pouzdra/mega-pojistky/victron-energy-mega-pojistka-60a-80v.htm",
+    "MEGA pojistka 60A — vstup Orionu":"https://www.mulac.cz/pojistky-pojistkova-pouzdra/mega-pojistky/victron-energy-mega-pojistka-60a-80v.htm",
+    "MEGA pojistka 60A — výstup Orionu":"https://www.mulac.cz/pojistky-pojistkova-pouzdra/mega-pojistky/victron-energy-mega-pojistka-60a-80v.htm",
+    "MEGA pojistka 60A — přívod 12V bloku":"https://www.mulac.cz/pojistky-pojistkova-pouzdra/mega-pojistky/victron-energy-mega-pojistka-60a-80v.htm",
+    "Orion XS 12/12-50A — DC-DC z alternátoru":"https://eshop.neosolar.cz/dc-dc-nabijecka-orion-xs-12-12-50a-neizolovana/",
+    "MultiPlus C 12/1600/70-16 — SRDCE systému":"https://www.mulac.cz/p/victron-energy-multiplus-c-12-1600-70-16-menic-napeti-nabijec-ups-12v-70a-1600w",
+    "2P RCD 30mA typ A — HLAVNÍ (celý AC-OUT)":"https://www.kvelektro.cz/proudovy-chranic-eaton-pf6-40-2-003-a-40a-30ma-a-112924-p1753250",
+    "2P MCB — zásuvky":"https://www.kvelektro.cz/jistic-eaton-pl7-16-2-b-16a-pl7-b16-2-262765-p1214899",
+    "2P MCB — podlahovka":"https://www.kvelektro.cz/vyhledavani?q=PL7-10%2F2%2FB",
+    "2P MCB 16A — bojler":"https://www.kvelektro.cz/jistic-eaton-pl7-16-2-b-16a-pl7-b16-2-262765-p1214899",
+    "2P RCBO 16A/30mA typ A — vstup z kempu":"https://www.kvelektro.cz/vyhledavani?q=RCBO+2P+30mA+typ+A",
+    "Kemp 230V — CEE přívod":"https://www.nomadem.cz/230v-cee-pripojka_z624/",
+    "LYNX DISTRIBUTOR + (kladná sběrnice s pojistkami)":"https://www.victronenergy.com/dc-distribution-systems/lynx-distributor",
+    "LYNX DISTRIBUTOR − (záporná sběrnice)":"https://www.victronenergy.com/dc-distribution-systems/lynx-distributor",
+    "12V blok K735A — distribuce":"https://www.hadex.cz/k735a-distribucni-blok--12-pojistek-kladny-i-zaporny-pol-pojistkovy-drzak/",
+    "Nožová pojistka 10A — světla":"https://www.hadex.cz/k735a-distribucni-blok--12-pojistek-kladny-i-zaporny-pol-pojistkovy-drzak/",
+    "Nožová pojistka 10A — USB/zásuvky":"https://www.hadex.cz/k735a-distribucni-blok--12-pojistek-kladny-i-zaporny-pol-pojistkovy-drzak/",
+    "Nožová pojistka 15A — lednice":"https://www.hadex.cz/k735a-distribucni-blok--12-pojistek-kladny-i-zaporny-pol-pojistkovy-drzak/",
+    "Nožová pojistka 10A — čerpadlo":"https://www.hadex.cz/k735a-distribucni-blok--12-pojistek-kladny-i-zaporny-pol-pojistkovy-drzak/",
+    "Nožová pojistka 20A — naftové topení":"https://www.elektro-hofman.cz/pojistkove-pouzdro-drzak-nozove-autopojistky-auto-pl-kryt-kvalitni-precizni-max-proud-30a-na-kabel-s-krytem/",
+    "Světla 12V (LED)":"https://www.svetkaravanu.cz/vestavne-led-nabytkove-svitidlo_z13900/",
+    "USB / 12V zásuvky":"https://www.onpira.cz/zbozi/vestavna-dvojita-zasuvka-usb-do-panelu-12-24v/",
+    "Lednice 12V (kompresorová)":"https://www.vseprokaravan.cz/lednice--vestavne--kompresorove/vestavna-kompresorova-chladnicka--cruise-85-off-12-24v--indel-b/",
+    "Relé čerpadla":"https://race-shop.cz/odpojovace-prepinace-startovaci-tlacitka/83179-rele-automobilove-12v-30a-on-off-4pin-s-pojistkou.html",
+    "Čerpadlo vody 12V":"https://www.karavan.cz/membranove-cerpadlo-shurflo-classic-12v-tlakove-10-6-litru-min",
+    "Vodovodní baterie / kohoutky (mikrospínač)":"https://www.vseprokaravan.cz/ostatni-prislusenstvi/mikrospinac-k-vodovodni-baterii-comet-london/",
+    "Naftové topení 5kW (12V)":"https://eshop.lfbros.cz/nezavisle-topeni/nezavisle-teplovzdusne-topeni-12v-5kw-lfbros-digi-start-t4-pro-e5-0-air-diesel-heater-12v--5kw-lfbros-digi-start/",
+    "Podlahové topení 230V ~320W":"https://www.greeneco.cz/topna-rohoz-2-m2-vykon-300w-s-termostatem-tf-h1-1",
+    "Přepínač u vchodových dveří (schodišťový)":"https://www.hadex.cz/p/l310-prepinac-packovy-kn3-d-102-on-on-1pol-12v-20a",
+    "Přepínač u postele (schodišťový)":"https://www.hadex.cz/p/l310-prepinac-packovy-kn3-d-102-on-on-1pol-12v-20a",
+    "Hlavní světlo (u dveří i u postele)":"https://www.svetkaravanu.cz/vestavne-led-nabytkove-svitidlo_z13900/"
+  };
+  // obrazky produktu (data-t -> URL obrazku z eshopu), nacita se lazy v hoveru
+  var images = {
+    "Solární panel AIKO Nebular 445W lightweight":"https://cdn.myshoptet.com/usr/www.vseprokaravan.cz/user/shop/big/51379_solarni-panel-aiko-440-445-mah54tm-nebular-1p-440-445-wp-cerny-ram-1.jpg?6880eefa",
+    "Baterie Wattcycle 12V 314Ah Mini LiFePO4":"https://eu.wattcycle.com/cdn/shop/files/WattCycle_12V_314Ah_Mini_LiFePO4_Battery_with_Bluetooth.jpg?v=1776773067",
+    "Battery Switch 275A — hlavní odpojovač":"https://eshop.neosolar.cz/userdata/cache/images/storecards/4802/900/8139-O-bateriovy-odpojovac-275a.webp",
+    "MEGA 200A — hlavní pojistka":"https://eshop.neosolar.cz/userdata/cache/images/storecards/4526/900/205-O-pojistka-mega.webp",
+    "MEGA 200A — větev měniče":"https://eshop.neosolar.cz/userdata/cache/images/storecards/4526/900/205-O-pojistka-mega.webp",
+    "DC odpojovač ETI ETIMAT 10 DC 2P C20":"https://www.kvelektro.cz/api/products/1309330/images/L/jistic-eti-etimat-10-dc-2p-c-20a-6ka-002138717__p_1309330.webp",
+    "MPPT regulátor SmartSolar 100/50 (Bluetooth)":"https://cdn.myshoptet.com/usr/www.vseprokaravan.cz/user/shop/big/44406_mppt-solarni-regulator-victron-energy-smartsolar-100-50--www-vseprokaravan-cz.png?65e66137",
+    "Orion XS 12/12-50A — DC-DC z alternátoru":"https://eshop.neosolar.cz/userdata/cache/images/storecards/5095/900/01_orion_xs.webp",
+    "MultiPlus C 12/1600/70-16 — SRDCE systému":"https://autobaterie-mulac.s34.cdn-upgates.com/_cache/d/1/d10e8f1bd6af7483f62a7aaf96ce36f4-9426-1404288544.jpg",
+    "2P RCD 30mA typ A — HLAVNÍ (celý AC-OUT)":"https://www.kvelektro.cz/api/products/1753250/images/L/proudovy-chranic-eaton-pf6-40-2-003-a-40a-30ma-a-112924__p_1753250.webp",
+    "2P MCB — zásuvky":"https://www.kvelektro.cz/api/products/1214899/images/L/jistic-eaton-pl7-16-2-b-16a-pl7-b16-2-262765__p_1214899.webp",
+    "2P MCB — podlahovka":"https://www.kvelektro.cz/api/products/1214899/images/L/jistic-eaton-pl7-16-2-b-16a-pl7-b16-2-262765__p_1214899.webp",
+    "2P MCB 16A — bojler":"https://www.kvelektro.cz/api/products/1214899/images/L/jistic-eaton-pl7-16-2-b-16a-pl7-b16-2-262765__p_1214899.webp",
+    "Kemp 230V — CEE přívod":"https://www.nomadem.cz/data/tmp/3/1/541_3.jpg",
+    "12V blok K735A — distribuce":"https://hadex.cz/files/images/product/800/distribucni-blok--12-pojistek-kladny-i-zaporny-pol-pojistkovy-drzak-HDjq.jpg",
+    "Naftové topení 5kW (12V)":"https://cdn.myshoptet.com/usr/eshop.lfbros.cz/user/shop/big/590_p2070313-nahled.jpg?6902034a",
+    "Lednice 12V (kompresorová)":"",
+    "Čerpadlo vody 12V":"https://img.karavan.cz/images/68747470733a2f2f646174612e737665746b61726176616e752e637a%2Fdata%2Ftmp%2F102%2F4%2F142764_102.jpg%3F1704378452_1?ext=1&vid=1&tid=21&r=A",
+    "Relé čerpadla":"https://race-shop.cz/246044-large_default/rele-automobilove-12v-30a-on-off-4pin-s-pojistkou.jpg",
+    "Vodovodní baterie / kohoutky (mikrospínač)":"https://cdn.myshoptet.com/usr/www.vseprokaravan.cz/user/shop/big/45727-2_mikrospinac-k-vodovodni-baterii-comet-london--www-vseprokaravan-cz.jpg?6617e1e9",
+    "Světla 12V (LED)":"https://data.svetkaravanu.cz/data/tmp/0/1/182571_0.jpg?1745218041_1",
+    "USB / 12V zásuvky":"https://cdn.myshoptet.com/usr/www.onpira.cz/user/shop/big/9324-1_9321-2-12v-usb-za-suvka-do-palubky-auta-1.jpg?65a51b6c",
+    "Podlahové topení 230V ~320W":"https://www.greeneco.cz/fotky51154/fotos/1739959976Topn%C3%A1%20roho%C5%BE%20Termofol%20set_TF_H1_b%C3%ADl%C3%BD111.webp",
+    "Nožová pojistka 20A — naftové topení":"https://www.elektro-hofman.cz/_obchody/elektro-hofman.shop5.cz/prilohy/15/pojistkove-pouzdro-drzak-nozove-pojistky-auto-pl-k-0.jpg.big.jpg"
+  };
+  document.querySelectorAll('.node, .cab').forEach(function(n){
+    var nt = n.getAttribute('data-t')||'';
+    var href = links[nt];
+    if(href){
+      n.style.cursor='pointer';
+      n.addEventListener('click', function(){ window.open(href,'_blank','noopener'); });
+    }
+    n.addEventListener('mouseenter', function(){
+      var t = n.getAttribute('data-t')||'', d = n.getAttribute('data-d')||'', s = n.getAttribute('data-s')||'';
+      var img = images[nt];
+      tip.innerHTML = '<b>'+t+'</b>'+(d?'<div class="td">'+d+'</div>':'')+(s?'<div class="ts"><span class="tsh">📐 Proč &amp; zdroj</span>'+s+'</div>':'')
+        +(href?'<br><span style="color:#7dd3fc;font-weight:bold;">🔗 Klikni → otevře e-shop (nové okno)</span>':'')
+        +(img?'<br><img src="'+img+'" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display=\'none\'" style="margin-top:6px;display:block;max-width:230px;max-height:150px;border-radius:6px;border:1px solid #334155;background:#fff;">':'');
+      tip.style.display = 'block';
+    });
+    n.addEventListener('mousemove', function(e){
+      var pad=16, w=tip.offsetWidth, h=tip.offsetHeight;
+      var x=e.clientX+pad, y=e.clientY+pad;
+      if(x+w>window.innerWidth) x=e.clientX-w-pad;
+      if(y+h>window.innerHeight) y=e.clientY-h-pad;
+      tip.style.left=x+'px'; tip.style.top=y+'px';
+    });
+    n.addEventListener('mouseleave', function(){ tip.style.display='none'; });
+  });
+})();
+</script>
+</body>
+</html>
