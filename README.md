@@ -1,5 +1,11 @@
 # ⚡ Elektrifikace dodávky Peugeot Boxer 2021 — off-grid 12V/230V
 
+<div align="left">
+  <a href="https://github.com/outpost2026/van-peugeot-offgrid/blob/main/README.en.md">
+    <img src="https://flagcdn.com/24x18/gb.png" alt="EN" height="18"> English
+  </a>
+</div>
+
 **Off-grid Victron systém pro nezávislé bydlení v dodávce.** Minimalistický setup: lednice 12V, MaxxFan, USB porty, jedna 230V zásuvka, nabíjení z alternátoru + soláru (budoucnost).
 
 ---

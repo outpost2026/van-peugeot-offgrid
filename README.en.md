@@ -1,11 +1,16 @@
 # ⚡ Peugeot Boxer 2021 Campervan Off-Grid Electrification — 12V/230V
 
+<div align="left">
+  <a href="https://github.com/outpost2026/van-peugeot-offgrid/blob/main/README.md">
+    <img src="https://flagcdn.com/24x18/cz.png" alt="CZ" height="18"> Česky
+  </a>
+</div>
+
 **Victron Energy off-grid system for a Peugeot Boxer L4H2 campervan conversion.**  
 Minimalist setup: 12V compressor fridge, MaxxFan roof vent, USB charging ports, one 230V socket, alternator charging + future solar.
 
 > 🇨🇿 This is the English version for the international van conversion community.  
-> The project documentation and client communications are in Czech.  
-> See `README.md` for the Czech version.
+> The project documentation and client communications are in Czech.
 
 ---
 
